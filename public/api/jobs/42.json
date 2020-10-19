@@ -1,0 +1,21 @@
+{
+  "data":  {
+    "id": "42",
+    "type": "Townhouse",
+    "attributes": {
+      "jobNumber": 2,
+      "title": "Urban Living",
+      "owner": "Mike Teage",
+      "suburb": "Glenfield",
+      "city": "Auckland",
+      "address": "25 manuka road",
+      "bedrooms": 2,
+      "createdBy": "22",
+      "createdAt": "2013-01-23T18:15:43.511Z",
+      "entity": "1",
+      "form": "11",
+      "files": "",
+      "description": "A commuters dream. This rental is within walking distance of 2 bus stops and the Metro."
+    }
+  }
+}
