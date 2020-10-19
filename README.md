@@ -1,8 +1,6 @@
 # tbscjobportal
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
+This is an aplication designed to allow the completion of forms, addition of supporting files, and later access to these forms and files
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
