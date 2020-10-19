@@ -1,0 +1,14 @@
+<LinkTo @route="jobs" @model={{@job}}>
+  <div class="job-row">
+    <div class="job-img">
+      <img src="https://thumbs.dreamstime.com/z/house-number-sign-italy-80966377.jpg" width="100px" height="100px" />
+    </div>
+    <div class="job-text">
+      <header><h1>{{@job.title}}</h1></header>
+      <body>
+        <p>{{@job.address}}</p>
+        <p>Job Number: {{@job.jobNumber}}</p>
+      </body>
+    </div>
+  </div>
+</LinkTo>

@@ -55,6 +55,8 @@ button {
   border: 2px solid blue;
   padding: 5px;
   margin: 5px;
+  display: flex;
+
 }
 .job-list {
   padding-left: 16px;

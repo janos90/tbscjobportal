@@ -3,8 +3,8 @@
     {
       "id": "41",
       "type": "rental",
-      "jobNumber": 1,
       "attributes": {
+        "jobNumber": 1,
         "title": "Grand Old Mansion",
         "owner": "Veruca Salt",
         "suburb": "Birkenhead",
@@ -22,8 +22,8 @@
     {
       "id": "42",
       "type": "Townhouse",
-      "jobNumber": 2,
       "attributes": {
+        "jobNumber": 2,
         "title": "Urban Living",
         "owner": "Mike Teage",
         "suburb": "Glenfield",

@@ -4,12 +4,7 @@
   <div class="job-list">
     <h1>Job List</h1>
     {{#each @model as |job|}}
-    <LinkTo @route="jobs" @model={{@id}}>
-      <div class="job-row">
-        <h1>{{job.address}}</h1>
-      </div>
-
-    </LinkTo>
+      <Jobli @job={{job}} />
     {{/each}}
   </div>
 </div>
