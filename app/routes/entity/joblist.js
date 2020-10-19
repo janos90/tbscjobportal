@@ -7,7 +7,7 @@ const COMMUNITY_CATEGORIES = [
   'Apartment'
 ];
 
-export default class JobsRoute extends Route {
+export default class JobListRoute extends Route {
   async model() {
     let response = await fetch('/api/jobs.json');
     let { data } = await response.json();

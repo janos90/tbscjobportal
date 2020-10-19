@@ -1,5 +1,16 @@
 <div class="job-list">
   <h1>Job List</h1>
+
+  <div class="filter">
+    <label for="male">SortBy</label><br>
+    <select name="sort" id="sort">
+      <option value="jobNumber">Job Number</option>
+      <option value="title">Title</option>
+      <option value="suburb">Suburb</option>
+      <option value="creationDate">Creation Date</option>
+    </select>
+  </div>
+
   {{#each @model as |job|}}
     <Jobli @job={{job}} />
   {{/each}}
