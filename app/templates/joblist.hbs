@@ -1,0 +1,12 @@
+<div class="page-wraper">
+  {{sidebar title="Job list"}}
+
+  <div class="job-list">
+    <h1>Job List</h1>
+    {{#each @model as |job|}}
+      <div class="job-row">
+        <h1>{{job.address}}</h1>
+      </div>
+    {{/each}}
+  </div>
+</div>

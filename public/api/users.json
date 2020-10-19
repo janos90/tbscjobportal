@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "id": "20",
+      "fistName": "Juan",
+      "lastName": "Garcia",
+      "permissions": [],
+      "userName": "jpgnco",
+      "password": "password1",
+      "permissions": [
+        {entity: "1", level:"full"},
+        {entity: "2", level:"read"}
+      ]
+    }, {
+      "id": "21",
+      "fistName": "Francis",
+      "lastName": "Reddy",
+      "permissions": [],
+      "userName": "franred",
+      "password": "franred",
+      "permissions": [
+        {entity: "1", level:"full"}
+      ]
+    }
+  ]
+}
