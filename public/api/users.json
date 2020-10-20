@@ -2,10 +2,9 @@
   "data": [
     {
       "id": "20",
-      "fistName": "Juan",
-      "lastName": "Garcia",
-      "permissions": [],
-      "userName": "jpgnco",
+      "fist-name": "Juan",
+      "last-name": "Garcia",
+      "user-name": "jpgnco",
       "password": "password1",
       "permissions": [
         {entity: "1", level:"full"},
@@ -13,10 +12,9 @@
       ]
     }, {
       "id": "21",
-      "fistName": "Francis",
-      "lastName": "Reddy",
-      "permissions": [],
-      "userName": "franred",
+      "fist-name": "Francis",
+      "last-name": "Reddy",
+      "user-name": "franred",
       "password": "franred",
       "permissions": [
         {entity: "1", level:"full"}

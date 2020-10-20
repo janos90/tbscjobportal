@@ -1,0 +1,15 @@
+{
+  "data": {
+      "id": "21",
+      "type": "user",
+      "attributes": {
+        "fist-name": "Francis",
+        "last-name": "Reddy",
+        "user-name": "franred",
+        "password": "franred",
+        "permissions": [
+          {"entity": "1", "level":"full"}
+        ]
+      }
+    }
+  }
