@@ -10,8 +10,8 @@
           "sections": [
             {
               "title": "Thomsons Timber Supplies Limited",
-              "image": "https://www.thomsonsitm.co.nz/themes/ThomsonsITM/images/logo.png",
               "elements": [
+                {"text":"", "image": "https://www.thomsonsitm.co.nz/themes/ThomsonsITM/images/logo.png", "background":"#000000"}
               ]
             }, {
               "title": "For Office Use Only",

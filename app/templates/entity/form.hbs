@@ -111,6 +111,9 @@ form {
       {{/if}}
       <table>
       {{#each subSection.elements as |element|}}
+        {{#if element.image}}
+          <img src="{{element.image}}" style="background-color: {{element.background}}; padding: 15px;"/>
+        {{/if}}
         {{#if (eq element.input "text")}}
           <tr>
             <td>
