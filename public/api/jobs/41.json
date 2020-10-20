@@ -1,17 +1,17 @@
 {
   "data":  {
       "id": "41",
-      "type": "rental",
+      "type": "job",
       "attributes": {
-        "jobNumber": 1,
+        "job-number": 1,
         "title": "Grand Old Mansion",
         "owner": "Veruca Salt",
         "suburb": "Birkenhead",
         "city": "Auckland",
         "address": "33 holyoake place",
         "bedrooms": 5,
-        "createdBy": "21",
-        "createdAt": "2012-04-23T18:25:43.511Z",
+        "created-by": "21",
+        "created-at": "2012-04-23T18:25:43.511Z",
         "entity": "1",
         "form": "11",
         "files": "",
