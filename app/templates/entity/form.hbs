@@ -1,3 +1,292 @@
+<style type="text/css">
+body {
+  text-align: -webkit-center;
+  background-color: #FFfFFF;
+  font-family: Sans-serif;
+}
+
+.firstCol {
+  width: 20%;
+}
+
+form {
+  width:800px;
+}
+.address {
+  Height: 60px;
+  width: 350px;
+  margin-left:15px;
+  word-break:break-all;
+}
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
 
 
-<h1>Form</h1>
+}
+.header {
+  flex:1;
+  text-align: center;
+  min-width: 600px;
+}
+.main {
+  flex: 1;
+}
+.textbox {
+  /* float: right; */
+}
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14;
+
+}
+.checkboxContainer {
+  border: solid 3px black;
+  flex-flow: wrap;
+  width: 50%;
+  padding: 5px;
+
+}
+
+.checkboxContainerheader {
+  background-color: grey;
+  padding: 5px
+}
+
+.fullWidthContainer {
+  border: solid 3px black;
+  flex-flow: wrap;
+  width: 100%;
+  padding: 5px;
+}
+
+.pair {
+  display: flex;
+}
+
+.right {
+  float: right;
+}
+
+.uploadSection {
+  text-align: left;
+}
+
+.large {
+  height: 90px;
+  width: 90%;
+}
+
+.imagePair {
+  display: flex;
+}
+
+.imageContainer {
+  flex-flow: wrap;
+  width: 50%;
+  padding: 5px;
+}
+.uploadRow {
+  display: flex;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14;
+}
+</style>
+
+
+<form id="myForm" align="center" onsubmit="handleFormSubmit(this)">
+  <div class="wrapper">
+    <div class="main">
+      <div class="headingWrapper">
+        <div class="imagePair">
+          <p style="padding: 10px">
+            <img src="https://www.thomsonsitm.co.nz/themes/ThomsonsITM/images/logo.png" style="background-color: #000000; padding: 20px;">
+            <br>
+            <br>Thomsons Timbers Supplies Limited
+          </p>
+          <div class="checkboxContainer">
+            <p style="color: red; text-align: left; padding-left: 9px">Office Use only:</p>
+            <p>Frames/Trusses: <input class="textbox right" name="officeFrames" type="text" style="width: 60%;"></p>
+            <p>Discount Group: <input class="textbox right" name="officeDiscount" type="text" style="width: 60%;"></p>
+            <p>Reason: <input class="textbox right" name="officeReason" type="text" style="width: 60%;"></p>
+          </div>
+        </div>
+      </div>
+      <header>
+        <h3>Estimate Request</h3>
+      </header>
+
+      <div class="pair">
+        <div class="checkboxContainer">
+          <header>Client</header>
+          <input class="textbox" required name="cClient" type="text" placeholder="Client" >
+          <input class="textbox" name="cPhone" type="text" placeholder="Phone">
+          <input class="textbox" name="cMobile" type="text" placeholder="Mobile">
+          <input class="textbox" required name="cRep" type="text" placeholder="Rep">
+          <input class="textbox" name="cDate" type="text" placeholder="Date">
+          <p class="row"><textarea class="textbox address" name="cAddress" type="text" placeholder="Client Address"></textarea></p>
+          <p class="row"><input class="location" name="jobLocAuckland" type="checkbox">Auckland Job</p>
+          <p class="row"><input class="location" name="jobLocWaikato" type="checkbox">Waikato Job</p>
+        </div>
+        <div class="checkboxContainer">
+          <header>Job</header>
+          <input class="textbox" required name="jobName" type="text" placeholder="Job Name">
+          <input class="textbox" name="jobCompany" type="text" placeholder="Company/Branch Name">
+          <input class="textbox" name="jobPrenail" type="text" placeholder="Est. Pre-nail Date">
+          <p class="row"><textarea class="textbox address" required name="jobAddress" type="text" placeholder="Site Address"></textarea></p>
+          <p class="row"><input name="emailArie" type="checkbox">Email to Arie<input name="emailSkip" type="checkbox">Email to Skip<input name="emailLuci" type="checkbox">Email to Luci</p>
+          <p class="row">Email a copy to:<input class="textbox right" name="emailTo" type="email" placeholder="email a copy to" style="width: 60%; margin-left: 10px;"></p>
+
+
+        </div>
+      </div>
+      <header>
+        <h4 >Tick the items below required to be estimated</h4>
+      </header>
+      <div class="pair">
+
+        <div class="checkboxContainer">
+          <p class="row"><input class="detailing" name="variable1" type="checkbox">Truss Layout, PS1 only</p>
+          <p class="row"><input class="detailing" name="variable2" type="checkbox">Full Buildable Layouts</p>
+          <p class="row"><input class="detailing" name="variable42" type="checkbox">Detailing</p>
+          <p style="border:solid 1px black;"></p>
+          <p class="row"><input name="variable3" type="checkbox">Steel Reinforcing</p>
+          <p class="row"><input name="variable4" type="checkbox">Pre-Bent R/Steel</p>
+          <p class="row"><input name="variable5" type="checkbox">Rib-raft</p>
+          <p class="row"><input name="variable6" type="checkbox">Masonry</p>
+          <p class="row"><input name="variable7" type="checkbox">Concrete</p>
+        </div>
+        <div class="checkboxContainer">
+          <p class="row"><input name="variable8" type="checkbox">Prenail</p>
+          <p class="row"><input class="detailing" name="variable9" type="checkbox">Trusses/Rafters</p>
+          <p class="row"><input name="variable10" type="checkbox">Roof Pack</p>
+          <p class="row"><input name="variable11" type="checkbox">Random</p>
+          <p class="row"><input name="variable12" type="checkbox">Sub-floor</p>
+          <p class="row"><input name="variable13" type="checkbox">Mid-floor</p>
+          <p class="row"><input name="variable14" type="checkbox">Deck</p>
+        </div>
+        <div class="checkboxContainer">
+          <p class="row"><input name="variable15" type="checkbox">Cladding</p>
+          <p class="row"><input name="variable16" type="checkbox">Insulation Only</p>
+          <p class="row"><input name="variable17" type="checkbox">Insulation Installed</p>
+          <p class="row"><input name="variable18" type="checkbox">Plasterboard</p>
+          <p class="row"><input name="variable19" type="checkbox">Plasterboard D.T.S</p>
+          <p class="row"><input name="variable20" type="checkbox">Internal Linings</p>
+          <p class="row"><input name="variable21" type="checkbox">Internal Doors</p>
+        </div>
+        <div class="checkboxContainer">
+          <p class="row"><input name="variable22" type="checkbox">Timber Fascia</p>
+          <p class="row"><input name="variable23" type="checkbox">Marley Gutter / D.P</p>
+          <p class="row"><input name="variable24" type="checkbox">Roofing</p>
+          <p class="row"><input name="variable25" type="checkbox">Aluminium Joinery</p>
+          <p class="row"><input name="variable26" type="checkbox">Pergola</p>
+          <p class="row"><input name="variable27" type="checkbox">Retaining Wall</p>
+          <p class="row"><input name="variable28" type="checkbox"></p>
+        </div>
+      </div>
+      <header>
+        <h4 >Tick the building zones for this building</h4>
+      </header>
+      <div class="pair">
+
+        <div class="checkboxContainer">
+          Wind zone
+          <p class="row"><input class="wind" name="variable30" type="checkbox">Low Wind</p>
+          <p class="row"><input class="wind" name="variable32" type="checkbox">Medium Wind</p>
+          <p class="row"><input class="wind" name="variable34" type="checkbox">High Wind</p>
+          <p class="row"><input class="wind" name="variable36" type="checkbox">Very High Wind</p>
+          <p class="row"><input class="wind" name="variable37" type="checkbox">Extra High Wind</p>
+        </div>
+        <div class="checkboxContainer">
+          Corrosion zone
+          <p class="row"><input class="corrosion" name="variable29" type="checkbox">Corrosion Zone A: None</p>
+          <p class="row"><input class="corrosion" name="variable31" type="checkbox">Corrosion Zone B: Low</p>
+          <p class="row"><input class="corrosion" name="variable33" type="checkbox">Corrosion Zone C: Med</p>
+          <p class="row"><input class="corrosion" name="variable35" type="checkbox">Corrosion Zone D: High</p>
+        </div>
+      </div>
+      <header>
+        <h4 >Note Products required for the following:</h4>
+      </header>
+      <div class="pair">
+        <div class="fullWidthContainer">
+          <p>Interior Doors: <input class="textbox right" name="intDoor" type="text" placeholder="Product" style="width: 80%;"></p>
+          <p>Door Hardware:  <input class="textbox right" name="doorH" type="text" placeholder="Product" style="width: 80%;"></p>
+          <p>Scotia:         <input class="textbox right" name="scotia" type="text" placeholder="Product" style="width: 80%;"></p>
+          <p>Skirting:         <input class="textbox right" name="skirting" type="text" placeholder="Product" style="width: 80%;"></p>
+          <p>Architraves:         <input class="textbox right" name="architraves" type="text" placeholder="Product" style="width: 80%;"></p>
+        </div>
+      </div>
+      <header>
+        <h4 >Note below alterations to plan supplied:</h4>
+      </header>
+      <div class="pair">
+        <div class="fullWidthContainer">
+          <p><textarea class="textbox large" name="alterations" type="text" placeholder="Alterations"></textarea></p>
+        </div>
+      </div>
+      <footer>
+        <h2> PLEASE NOTE: ALL INFORMATION GIVEN ON THIS FORM SUPERCEDES THAT ON THE PLAN.</h2>
+        </footer>
+      </div>
+    </div>
+
+    <div class="uploadSection">
+      <br>
+      <h3>Upload your plan files here. If you're not uploading a file, tick the box.</h3>
+      <table>
+        <tr>
+          <td class='firstCol'>Plans:  </td>
+          <td><input id='plansFile' type="file" name="myFile1" class="plans" required></td>
+          <td id='plansFileResults' class="results">result</td>
+          <td style="text-align: right; min-width: 90px;">No File:<input name="myFile1checkbox" type="checkbox" class="plans" required></td>
+        </tr>
+        <tr>
+          <td class='firstCol'>Engineer Plans: </td>
+          <td><input id='eng1' type="file" name="myFile2" class="engineer" required></td>
+          <td id='eng1Results' class="results">result</td>
+          <td style="text-align: right; min-width: 90px;">No File:<input name="myFile2checkbox" type="checkbox" class="engineer" required></td>
+        </tr>
+        <tr hidden id='engrow1'>
+          <td class='firstCol'>Engineer Plans extra: </td>
+          <td><input id='eng2' type="file" name="myFile2extra1" class="engineer"></td>
+          <td><br></td>
+        </tr>
+        <tr hidden id='engrow2'>
+          <td class='firstCol'>Engineer Plans extra: </td>
+          <td><input id='eng3' type="file" name="myFile2extra2" class="engineer"></td>
+          <td><br></td>
+        </tr>
+        <tr hidden id='engrow3'>
+          <td class='firstCol'>Engineer Plans extra: </td>
+          <td><input id='eng4' type="file" name="myFile2extra3" class="engineer"></td>
+          <td><br></td>
+        </tr>
+        <tr hidden id='engrow4'>
+          <td class='firstCol'>Engineer Plans extra: </td>
+          <td><input id='eng5' type="file" name="myFile2extra4" class="engineer"></td>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td class='firstCol'>Window & Door Plans:</td>
+          <td><input id='wndPlansFile' type="file" name="myFile3" class="wndPlans" required></td>
+          <td id='wndPlansFileResults' class="results">result</td>
+          <td style="text-align: right; min-width: 90px;">No File:<input name="myFile3checkbox" type="checkbox" class="wndPlans" required></td>
+        </tr>
+        <tr>
+          <td class='firstCol'>Specifications:</td>
+          <td><input id='specsFile' type="file" name="myFile4" class="specs" required></td>
+           <td id='specsFileResults' class="results">result</td>
+          <td style="text-align: right; min-width: 90px;">No File:<input name="myFile4checkbox" type="checkbox" class="specs" required></td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <input class="submission" type="submit" value="Submit form and upload">
+  </form>
