@@ -1,0 +1,13 @@
+{
+  "data":
+    {
+      "id": "1",
+      "type": "entity"
+      "attributes": {
+        "name": "Thomsons ITM",
+        "provides": [],
+        "suppliers": [2, 3, 4],
+        "forms": [11]
+      }
+    }
+  }
