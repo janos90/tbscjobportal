@@ -1,12 +1,15 @@
 {
-  "data": {
+  "data":
+  {
       "id": "21",
       "type": "user",
       "attributes": {
-        "fist-name": "Francis",
+        "first-name": "Francis",
         "last-name": "Reddy",
         "user-name": "franred",
         "password": "franred",
+        "default-sort": "jobNumber",
+        "default-filter": "status-open",
         "permissions": [
           {"entity": "1", "level":"full"}
         ]

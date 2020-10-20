@@ -4,10 +4,12 @@
       "id": "20",
       "type": "user",
       "attributes": {
-        "fist-name": "Juan",
+        "first-name": "Juan",
         "last-name": "Garcia",
         "user-name": "jpgnco",
         "password": "password1",
+        "default-sort": "jobNumber",
+        "default-filter": "status-open",
         "permissions": [
           {"entity": "1", "level":"full"},
           {"entity": "2", "level":"read"}
