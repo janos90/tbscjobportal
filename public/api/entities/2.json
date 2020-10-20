@@ -1,0 +1,13 @@
+{
+  "data":
+    {
+      "id": "2",
+      "type": "entity"
+      "attributes": {
+        "name": "Quantifier",
+        "provides": ["QS"],
+        "suppliers": [],
+        "forms": []
+      }
+    }
+  }
