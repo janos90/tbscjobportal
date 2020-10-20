@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('entity', function() {
     this.route('jobs', { path: '/job/:job_id' });
     this.route('joblist');
-    this.route('form');
+    this.route('form', { path: '/job/:form_id' });
     this.route('settings');
   })
 });

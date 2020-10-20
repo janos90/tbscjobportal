@@ -5,11 +5,13 @@
     </h1>
   </header>
   <ul>
-    <li>
-      <LinkTo @route="entity.form">
-        {{fa-icon "file"}} New Job
-      </LinkTo>
-    </li>
+    {{#each @model as |form|}}
+      <li>
+        <LinkTo @route="entity.form" @model={{form}}>
+            {{fa-icon "file"}} {{form.formName}}
+        </LinkTo>
+      </li>
+    {{/each}}
     <li>
       <LinkTo @route="entity.joblist">
         {{fa-icon "th-list"}} Job List
