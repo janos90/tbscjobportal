@@ -1,6 +1,7 @@
 import Model, { attr } from '@ember-data/model';
 export default class JobModel extends Model {
   @attr jobNumber;
+  @attr status;
   @attr title;
   @attr owner;
   @attr suburb;

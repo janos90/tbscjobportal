@@ -5,6 +5,7 @@
       "type": "job",
       "attributes": {
         "job-number": 1,
+        "status": "open",
         "title": "Grand Old Mansion",
         "owner": "Veruca Salt",
         "suburb": "Birkenhead",
@@ -24,6 +25,7 @@
       "type": "job",
       "attributes": {
         "job-number": 2,
+        "status": "open",
         "title": "Urban Living",
         "owner": "Mike Teage",
         "suburb": "Glenfield",

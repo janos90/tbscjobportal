@@ -4,6 +4,7 @@
     "type": "job",
     "attributes": {
       "job-number": 2,
+      "status": "open",
       "title": "Urban Living",
       "owner": "Mike Teage",
       "suburb": "Glenfield",
