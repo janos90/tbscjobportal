@@ -2,34 +2,49 @@
   "data": [
     {
       "id": "1",
-      "name": "Thomsons ITM",
-      "provides": [],
-      "suppliers": [2, 3, 4],
-      "forms": [11]
+      "type": "entity",
+      "attributes": {
+        "name": "Thomsons ITM",
+        "provides": [],
+        "suppliers": [2, 3, 4],
+        "forms": [11]
+      }
     }, {
       "id": "2",
-      "name": "Quantifier",
-      "provides": ["QS"],
-      "suppliers": [],
-      "forms": []
+      "type": "entity",
+      "attributes": {
+        "name": "Quantifier",
+        "provides": ["QS"],
+        "suppliers": [],
+        "forms": []
+      }
     }, {
       "id": "3",
-      "name": "Steel Waikato",
-      "provides": ["roofing"],
-      "suppliers": [],
-      "forms": []
+      "type": "entity",
+      "attributes": {
+        "name": "Steel Waikato",
+        "provides": ["roofing"],
+        "suppliers": [],
+        "forms": []
+      }
     }, {
       "id": "4",
-      "name": "Resene colour waikato",
-      "provides": ["paint"],
-      "suppliers": [],
-      "forms": []
+      "type": "entity",
+      "attributes": {
+        "name": "Resene colour waikato",
+        "provides": ["paint"],
+        "suppliers": [],
+        "forms": []
+      }
     }, {
       "id": "5",
-      "name": "Butch Paints Taupo",
-      "provides": ["paint"],
-      "suppliers": [],
-      "forms": []
+      "type": "entity",
+      "attributes": {
+        "name": "Butch Paints Taupo",
+        "provides": ["paint"],
+        "suppliers": [],
+        "forms": []
+      }
     }
   ]
 }

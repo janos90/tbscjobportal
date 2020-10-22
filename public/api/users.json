@@ -2,23 +2,33 @@
   "data": [
     {
       "id": "20",
-      "fist-name": "Juan",
-      "last-name": "Garcia",
-      "user-name": "jpgnco",
-      "password": "password1",
-      "permissions": [
-        {entity: "1", level:"full"},
-        {entity: "2", level:"read"}
-      ]
+      "type": "user",
+      "attributes": {
+        "first-name": "Juan",
+        "last-name": "Garcia",
+        "user-name": "jpgnco",
+        "password": "password1",
+        "default-sort": "jobNumber",
+        "default-filter": "status-open",
+        "permissions": [
+          {"entity": "1", "level":"full"},
+          {"entity": "2", "level":"read"}
+        ]
+      }
     }, {
-      "id": "21",
-      "fist-name": "Francis",
-      "last-name": "Reddy",
-      "user-name": "franred",
-      "password": "franred",
-      "permissions": [
-        {entity: "1", level:"full"}
-      ]
-    }
+        "id": "21",
+        "type": "user",
+        "attributes": {
+          "first-name": "Francis",
+          "last-name": "Reddy",
+          "user-name": "franred",
+          "password": "franred",
+          "default-sort": "jobNumber",
+          "default-filter": "status-open",
+          "permissions": [
+            {"entity": "1", "level":"full"}
+          ]
+        }
+      }
   ]
 }
