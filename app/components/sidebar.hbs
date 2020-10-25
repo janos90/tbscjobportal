@@ -7,14 +7,14 @@
   <ul>
     {{#each @model as |form|}}
       <li>
-        <LinkTo @route="entity.form" @model={{form}}>
-            {{fa-icon "file"}} {{form.formName}}
+        <LinkTo @route="entity.forms">
+            {{fa-icon "file"}} Forms
         </LinkTo>
       </li>
     {{/each}}
     <li>
-      <LinkTo @route="entity.joblist">
-        {{fa-icon "th-list"}} Job List
+      <LinkTo @route="entity.jobs">
+        {{fa-icon "th-list"}} Jobs
       </LinkTo>
     </li>
     <li>

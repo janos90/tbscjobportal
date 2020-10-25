@@ -1,99 +1,27 @@
-<table>
-  <tr>
-    <td>
-      Title:
-    </td>
-    <td>
-       {{model.title}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      Owner:
-    </td>
-    <td>
-       {{model.owner}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      Suburb:
-    </td>
-    <td>
-       {{model.suburb}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      City:
-    </td>
-    <td>
-       {{model.city}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      Address:
-    </td>
-    <td>
-       {{model.address}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      Bedrooms:
-    </td>
-    <td>
-       {{model.bedrooms}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      CreatedBy:
-    </td>
-    <td>
-       {{model.createdBy}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      CreatedAt:
-    </td>
-    <td>
-       {{model.createdAt}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      Entity:
-    </td>
-    <td>
-       {{model.entity}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      Form:
-    </td>
-    <td>
-       {{model.form}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      Files:
-    </td>
-    <td>
-       {{model.files}}
-     </td>
-   </tr>
-  <tr>
-    <td>
-      Description:
-    </td>
-    <td>
-       {{model.description}}
-     </td>
-   </tr>
+<div class="job-list">
+  <h1>Job List</h1>
 
-</table>
+  <div class="filter">
+    <label for="sort">Sort By</label><br>
+    <select name="sort" value={{this.value}} id="sort">
+      <option value="jobNumber">Job Number</option>
+      <option value="title">Title</option>
+      <option value="suburb">Suburb</option>
+      <option value="creationDate">Creation Date</option>
+    </select>
+
+    <label for="filter">Filter By</label><br>
+    <select name="filter" value="open" id="filter">
+      <option value="status-all">All Jobs</option>
+      <option value="open">Status: open</option>
+      <option value="closed">Status: closed</option>
+    </select>
+  </div>
+
+  {{#each @model as |job|}}
+    {{#if (eq job.status @filter)}}
+      <Jobli @job={{job}} />
+      {{job.status}}
+    {{/if}}
+  {{/each}}
+</div>

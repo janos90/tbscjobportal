@@ -14,10 +14,15 @@
       </div>
     </body>
     <footer class="form-footer">
-      <LinkTo @route="entity">
-
-        <button class="submit" type="submit">Login</button>
-      </LinkTo>
+      <ul>
+      {{#each model as |user|}}
+      <li>
+        <LinkTo @route="entities" @model={{user.id}}>
+          log in as {{user.fullName}}
+        </LinkTo>
+      </li>
+      {{/each}}
+    </ul>
     </footer>
   </form>
 </div>
