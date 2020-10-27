@@ -17,7 +17,7 @@
       <ul>
       {{#each model as |user|}}
       <li>
-        <LinkTo @route="entities" @model={{user.id}}>
+        <LinkTo @route="authenticated.entities">
           log in as {{user.fullName}}
         </LinkTo>
       </li>
@@ -26,3 +26,15 @@
     </footer>
   </form>
 </div>
+
+<!--
+<form {{on "submit" this.authenticate}}>
+  <label for="identification">Login</label>
+  <input id='identification' placeholder="Enter Login" value={{this.identification}} {{on "change" this.updateIdentification}}>
+  <label for="password">Password</label>
+  <input id='password' placeholder="Enter Password" value={{this.password}} {{on "change" this.updatePassword}}>
+  <button type="submit">Login</button>
+  {{#if this.errorMessage}}
+    <p>{{this.errorMessage}}</p>
+  {{/if}}
+</form> -->

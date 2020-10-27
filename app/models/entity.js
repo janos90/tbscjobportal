@@ -4,4 +4,5 @@
     @attr provides;
     @attr suppliers;
     @attr forms;
+    @attr image;
   }

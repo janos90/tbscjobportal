@@ -2,12 +2,13 @@
   "data":
     {
       "id": "4",
-      "type": "entity"
+      "type": "entity",
       "attributes": {
         "name": "Resene colour waikato",
         "provides": ["paint"],
         "suppliers": [],
-        "forms": []
+        "forms": [],
+        "image": "https://www.resene.co.nz/picts/resene-logo.jpg"
       }
     }
   }

@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1 class="pull-left header-text">Select an entity</h1>
+  <button class="pull-right">
+    logout
+  </button>
+</div>
+<div class="tile-box">
+    {{#each @model as |entity|}}
+    <div class="tile entity">
+      <div class="entity-tile-image">
+        <img src="{{entity.image}}" />
+      </div>
+      <div class="entity-tile-name">
+        <h2>{{entity.name}}</h2>
+      </div>
+      <LinkTo @route="authenticated.entity" @model={{entity}}>
+        Select
+      </LinkTo>
+    </div>
+  {{/each}}
+</div>

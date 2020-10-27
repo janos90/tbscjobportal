@@ -4,24 +4,15 @@
       {{title}}
     </h1>
   </header>
-  <ul>
-    {{#each @model as |form|}}
-      <li>
-        <LinkTo @route="entity.forms">
-            {{fa-icon "file"}} Forms
-        </LinkTo>
-      </li>
-    {{/each}}
-    <li>
-      <LinkTo @route="entity.jobs">
-        {{fa-icon "th-list"}} Jobs
-      </LinkTo>
-    </li>
-    <li>
-      <LinkTo @route="entity.settings">
-        {{fa-icon "cog"}} Settings
-      </LinkTo>
-    </li>
-  </ul>
-  <a href="/logout">{{fa-icon "sign-out-alt"}} Log out</a>
+  <div class="sidebar-list">
+    <LinkTo @route="authenticated.entity.forms" class="sidebar-list-item">
+        {{fa-icon "file"}} Forms
+    </LinkTo>
+    <LinkTo @route="authenticated.entity.jobs" class="sidebar-list-item">
+      {{fa-icon "th-list"}} Jobs
+    </LinkTo>
+    <LinkTo @route="authenticated.entity.settings" class="sidebar-list-item">
+      {{fa-icon "cog"}} Settings
+    </LinkTo>
+  </div>
 </div>

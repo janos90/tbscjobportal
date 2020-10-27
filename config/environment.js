@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
+    // apiHost: 'http://localhost:4000',
     modulePrefix: 'tbscjobportal',
     environment,
     rootURL: '/',
@@ -22,6 +23,7 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

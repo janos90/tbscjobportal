@@ -7,7 +7,8 @@
         "name": "Thomsons ITM",
         "provides": [],
         "suppliers": [2, 3, 4],
-        "forms": [11]
+        "forms": [11],
+        "image": "https://www.thomsonsitm.co.nz/themes/ThomsonsITM/images/thomsons-itm-group-white.png"
       }
     }, {
       "id": "2",
@@ -34,7 +35,8 @@
         "name": "Resene colour waikato",
         "provides": ["paint"],
         "suppliers": [],
-        "forms": []
+        "forms": [],
+        "image": "https://www.resene.co.nz/picts/resene-logo.jpg"
       }
     }, {
       "id": "5",

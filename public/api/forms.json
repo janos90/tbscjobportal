@@ -4,15 +4,17 @@
       "id": "11",
       "type": "form",
       "attributes": {
-        "form-name": "Thomsons ITM Basic form",
+        "name": "Thomsons ITM Basic form",
+        "entity": "1",
+        "description": "Basic job submission form",
         "sections": [
           {
             "title": "header",
             "sections": [
               {
                 "title": "Thomsons Timber Supplies Limited",
-                "image": "https://www.thomsonsitm.co.nz/themes/ThomsonsITM/images/logo.png",
                 "elements": [
+                  {"text":"", "image": "https://www.thomsonsitm.co.nz/themes/ThomsonsITM/images/logo.png", "background":"#000000"}
                 ]
               }, {
                 "title": "For Office Use Only",
@@ -64,16 +66,95 @@
                   {"text": "Masonry",      "input":"checkbox", "name": "masonry"},
                   {"text": "Concrete",      "input":"checkbox", "name": "concrete"}
                 ]
+              }, {
+                "title": "",
+                "elements": [
+                  {"text": "Prenail",      "input":"checkbox", "name": "prenail"},
+                  {"text": "Trusses/Rafters",      "input":"checkbox", "name": "trussRaft"},
+                  {"text": "Roof Pack",      "input":"checkbox", "name": "roofPack"},
+                  {"text": "Random",      "input":"checkbox", "name": "random"},
+                  {"text": "Sub-floor",      "input":"checkbox", "name": "subFloor"},
+                  {"text": "Mid-floor",      "input":"checkbox", "name": "midFloor"},
+                  {"text": "Deck",      "input":"checkbox", "name": "deck"}
+                ]
+              }, {
+                "title": "",
+                "elements": [
+                  {"text": "Cladding",      "input":"checkbox", "name": "cladding"},
+                  {"text": "Insulation Only",      "input":"checkbox", "name": "insulationOnly"},
+                  {"text": "Insulation Installed",      "input":"checkbox", "name": "insulationInstalled"},
+                  {"text": "Plasterboard",      "input":"checkbox", "name": "plasterboard"},
+                  {"text": "Plasterboard D.T.S",      "input":"checkbox", "name": "plasterboardDTS"},
+                  {"text": "Internal Linings",      "input":"checkbox", "name": "internalLinings"},
+                  {"text": "Internal Doors",      "input":"checkbox", "name": "internalDoors"}
+                ]
+              }, {
+                "title": "",
+                "elements": [
+                  {"text": "Timber Fascia",      "input":"checkbox", "name": "timberFascia"},
+                  {"text": "Marley Gutter / D.P",      "input":"checkbox", "name": "marleyGutterDP"},
+                  {"text": "Roofing",      "input":"checkbox", "name": "roofing"},
+                  {"text": "Aluminium Joinery",      "input":"checkbox", "name": "alJoinery"},
+                  {"text": "Pergola",      "input":"checkbox", "name": "pergola"},
+                  {"text": "Retaining Wall",      "input":"checkbox", "name": "retainingWall"}
+                ]
               }
             ]
-          }
-        ]
-      }
+          }, {
+            "title": "Bulding Zones",
+            "sections": [
+              {
+                "title": "Wind Zone",
+                "elements": [
+                  {"text": "Low Wind",        "input":"radio",    "radio":"wind", "name": "lowWind"},
+                  {"text": "Medium Wind",        "input":"radio",    "radio":"wind", "name": "medWind"},
+                  {"text": "High Wind",        "input":"radio",    "radio":"wind", "name": "highWind"},
+                  {"text": "Very High Wind",        "input":"radio",    "radio":"wind", "name": "vHighWind"},
+                  {"text": "Extra High Wind",        "input":"radio",    "radio":"wind", "name": "eHighWind"}
+                ]
+              }, {
+                "title": "Corrosion Zone",
+                "elements": [
+                  {"text": "Zone A: None",        "input":"radio",    "radio":"corrosion", "name": "noneCorrosion"},
+                  {"text": "Zone B: Low",        "input":"radio",    "radio":"corrosion", "name": "lowCorrosion"},
+                  {"text": "Zone C: Medium",        "input":"radio",    "radio":"corrosion", "name": "medCorrosion"},
+                  {"text": "Zone D: High",        "input":"radio",    "radio":"corrosion", "name": "highCorrosion"}
+                ]
+              }
+            ]
+          }, {
+            "title": "Product Specifications",
+            "sections": [
+              {
+                "title": "",
+                "elements": [
+                  {"text": "Interior Doors",        "input":"text",    "name": "specIntDoors"},
+                  {"text": "Door Hardware",        "input":"text",    "name": "specDoorHardware"},
+                  {"text": "Scotia",           "input":"text",    "name": "specScotia"},
+                  {"text": "Skirting",        "input":"text",    "name": "specSkirting"},
+                  {"text": "Architraves",        "input":"text",    "name": "specArchitraves"}
+                ]
+              }
+            ]
+          }, {
+            "title": "Alterations",
+            "sections": [
+              {
+                "title": "",
+                "elements": [
+                  {"text": "Alterations",        "input":"textArea",    "name": "alterations"}
+                ]
+              }
+            ]
+      }]
+    }
     }, {
       "id": "12",
         "type": "form",
         "attributes": {
-          "form-name": "advanced",
+          "name": "Advanced form for renovations",
+          "description": "a more advanced form, best suited for complex renovations or additions",
+          "entity": "1",
           "sections": [{
               "title": "Thomsons ITM advanced form"
           }]

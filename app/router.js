@@ -8,12 +8,14 @@ export default class Router extends EmberRouter {
 
 Router.map(function() {
   this.route('login');
-  this.route('entities', { path: 'entities/:user_id' })
-  this.route('entity', { path: 'entity/:entity_id' }, function() {
-    this.route('jobs');
-    this.route('job', { path: 'job/:job_id' });
-    this.route('forms');
-    this.route('form', { path: 'form/:form_id' });
-    this.route('settings');
-  });
+  this.route('authenticated', { path: '' }, function(){
+    this.route('entities');
+    this.route('entity', { path: 'entity/:entity_id' }, function() {
+      this.route('jobs');
+      this.route('job', { path: 'job/:job_id' });
+      this.route('forms');
+      this.route('form', { path: 'form/:form_id' });
+      this.route('settings');
+    });
+  })
 });

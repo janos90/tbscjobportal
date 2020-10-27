@@ -1,5 +1,5 @@
 <div class="job-list">
-  <h1>Form List</h1>
+  <h1>Job List</h1>
 
   <div class="filter">
     <label for="sort">Sort By</label><br>
@@ -19,9 +19,6 @@
   </div>
 
   {{#each @model as |job|}}
-    {{#if (eq job.status @filter)}}
       <Jobli @job={{job}} />
-      {{job.status}}
-    {{/if}}
   {{/each}}
 </div>

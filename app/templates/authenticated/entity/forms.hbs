@@ -1,5 +1,5 @@
 <div class="job-list">
-  <h1>Job List</h1>
+  <h1>Form List</h1>
 
   <div class="filter">
     <label for="sort">Sort By</label><br>
@@ -18,10 +18,19 @@
     </select>
   </div>
 
-  {{#each @model as |job|}}
-    {{#if (eq job.status @filter)}}
-      <Jobli @job={{job}} />
-      {{job.status}}
-    {{/if}}
+  {{#each @model as |form|}}
+  <LinkTo @route="authenticated.entity.form" @model={{form}} class="job-link">
+    <div class="job-row">
+      <div class="job-text">
+        <header>
+          <h1>{{form.name}}</h1>
+        </header>
+        <p>
+          {{form.description}}
+        </p>
+      </div>
+    </div>
+  </LinkTo>
+
   {{/each}}
 </div>

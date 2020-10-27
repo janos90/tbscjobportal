@@ -2,7 +2,7 @@
   "data":
     {
       "id": "5",
-      "type": "entity"
+      "type": "entity",
       "attributes": {
         "name": "Butch Paints Taupo",
         "provides": ["paint"],

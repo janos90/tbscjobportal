@@ -1,14 +1,22 @@
-<LinkTo @route="entity.jobs" @model={{@job}}>
+<LinkTo @route="authenticated.entity.job" @model={{@job}} class="job-link">
   <div class="job-row">
     <div class="job-img">
-      <img src="https://thumbs.dreamstime.com/z/house-number-sign-italy-80966377.jpg" width="100px" height="100px" />
+      <img src="{{@job.image}}" width="100px" height="100px" alt="Job image" />
     </div>
     <div class="job-text">
       <header><h1>{{@job.title}}</h1></header>
       <body>
         <p>{{@job.address}}</p>
         <p>Job Number: {{@job.jobNumber}}</p>
+        <p>
+          Status: {{@job.status}}
+        </p>
       </body>
+    </div>
+    <div class="job-status {{@job.status}}">
+      {{#if (eq @job.status 'open')}}
+      {{fa-icon "circle"}}
+      {{/if}}
     </div>
   </div>
 </LinkTo>
