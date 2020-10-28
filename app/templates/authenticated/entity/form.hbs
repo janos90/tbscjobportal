@@ -2,6 +2,22 @@
   <h1>{{@model.name}}</h1>
 </header>
 <div class="form-wrapper">
+
+  <header class="checkboxContainerheader">
+    <h3>basic info</h3>
+  </header>
+    <div class="checkboxContainer">
+      <label >Title <Input @type='text' @value={{title}} /> </label> <br />
+      <label >Owner <Input @type='text' @value={{owner}} /> </label> <br />
+      <label >Suburb <Input @type='text' @value={{suburb}} /> </label> <br />
+      <label >City <Input @type='text' @value={{city}} /> </label> <br />
+      <label >Address <Input @type='text' @value={{address}} /> </label> <br />
+      <label >Number of bedrooms <Input @type='text' @value={{bedrooms}} /> </label> <br />
+      <label >Description <Input @type='text' @value={{description}} /> </label> <br />
+      <label >Category <Input @type='text' @value={{category}} /> </label> <br />
+    </div>
+
+
   {{#each @model.sections as |section|}}
     {{#if section.title}}
       <h1>{{section.title}}</h1>
@@ -25,7 +41,11 @@
                 <label for="{{element.name}}">{{element.text}}: </label>
               </td>
               <td>
-                <input type="text" name="{{element.name}}" id="{{element.name}}">
+                <Input
+                  @type="text"
+                  @name={{element.name}}
+                  @id={{element.name}}
+                />
               </td>
             </tr>
           {{/if}}
@@ -42,7 +62,7 @@
           {{#if (eq element.input "checkbox")}}
             <tr>
               <td>
-                <input type="checkbox" name="{{element.name}}" id="{{element.name}}" />
+                <Input type="checkbox" name="{{element.name}}" id="{{element.name}}" />
               </td>
               <td>
                 <label for="{{element.name}}">{{element.text}}: </label>
@@ -52,7 +72,7 @@
           {{#if (eq element.input "radio")}}
             <tr>
               <td>
-                <input type="radio" name="{{element.radio}}" id="{{element.name}}" />
+                <Input type="radio" name="{{element.radio}}" id="{{element.name}}" />
               </td>
               <td>
                 <label for="{{element.name}}">{{element.text}}: </label>
@@ -72,4 +92,4 @@
 
 </div>
 
-<button>Submit</button>
+<button {{action "saveJob"}}>Submit</button>
