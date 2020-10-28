@@ -1,9 +1,15 @@
 {
   "data": {
-    "formName": "advanced",
     "id": "12",
-    "sections": [
-      "title": "Thomsons ITM advanced form"
-    ]
+    "type": "form",
+    "attributes": {
+      "name": "advanced",
+      "sections": [{
+        "title": "Thomsons ITM advanced form",
+        "elements": [
+          {"text":"", "image": "https://www.thomsonsitm.co.nz/themes/ThomsonsITM/images/logo.png", "background":"#000000"}
+        ]
+      }]
+    }
   }
 }
