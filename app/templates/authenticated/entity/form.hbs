@@ -1,103 +1,3 @@
-<style type="text/css">
-  body {
-    text-align: -webkit-center;
-    background-color: #FFfFFF;
-    font-family: Sans-serif;
-  }
-
-  .firstCol {
-    width: 20%;
-  }
-
-  form {
-    width:800px;
-  }
-  .address {
-    Height: 60px;
-    width: 350px;
-    margin-left:15px;
-    word-break:break-all;
-  }
-  .wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    font-weight: bold;
-    text-align: center;
-
-
-  }
-  .header {
-    flex:1;
-    text-align: center;
-    min-width: 600px;
-  }
-  .main {
-    flex: 1;
-  }
-  .textbox {
-    /* float: right; */
-  }
-  .row {
-    display: flex;
-    flex-flow: row wrap;
-    text-align: center;
-    font-weight: normal;
-    font-size: 14;
-
-  }
-  .checkboxContainer {
-    border: solid 3px black;
-    flex-flow: wrap;
-    width: 50%;
-    padding: 5px;
-
-  }
-
-  .checkboxContainerheader {
-    background-color: grey;
-    padding: 5px
-  }
-
-  .fullWidthContainer {
-    border: solid 3px black;
-    flex-flow: wrap;
-    width: 100%;
-    padding: 5px;
-  }
-
-  .pair {
-    display: flex;
-  }
-
-  .right {
-    float: right;
-  }
-
-  .uploadSection {
-    text-align: left;
-  }
-
-  .large {
-    height: 90px;
-    width: 90%;
-  }
-
-  .imagePair {
-    display: flex;
-  }
-
-  .imageContainer {
-    flex-flow: wrap;
-    width: 50%;
-    padding: 5px;
-  }
-  .uploadRow {
-    display: flex;
-    text-align: center;
-    font-weight: normal;
-    font-size: 14;
-  }
-</style>
 <header>
   <h1>{{@model.name}}</h1>
 </header>
@@ -106,11 +6,13 @@
     {{#if section.title}}
       <h1>{{section.title}}</h1>
     {{/if}}
-    <div class='pair'>
+    <div class='form-pair'>
       {{#each section.sections as |subSection|}}
       <div class={{if (gt section.sections.length 1) "checkboxContainer" "fullWidthContainer"}}>
         {{#if subSection.title}}
+        <header class="checkboxContainerheader">
           <h3>{{subSection.title}}</h3>
+        </header>
         {{/if}}
         <table>
         {{#each subSection.elements as |element|}}
@@ -129,20 +31,32 @@
           {{/if}}
           {{#if (eq element.input "textArea")}}
             <tr>
-              <label for="{{element.name}}">{{element.text}}: </label>
-              <textarea type="text" name="{{element.name}}" id="{{element.name}}" class="textbox address" ></textarea>
+              <td>
+                <label for="{{element.name}}">{{element.text}}: </label>
+              </td>
+              <td>
+                <textarea type="text" name="{{element.name}}" id="{{element.name}}" class="textbox form-address" ></textarea>
+              </td>
             </tr>
           {{/if}}
           {{#if (eq element.input "checkbox")}}
             <tr>
-              <input type="checkbox" name="{{element.name}}" id="{{element.name}}" />
-              <label for="{{element.name}}">{{element.text}}: </label>
+              <td>
+                <input type="checkbox" name="{{element.name}}" id="{{element.name}}" />
+              </td>
+              <td>
+                <label for="{{element.name}}">{{element.text}}: </label>
+              </td>
             </tr>
           {{/if}}
           {{#if (eq element.input "radio")}}
             <tr>
-              <input type="radio" name="{{element.radio}}" id="{{element.name}}" />
-              <label for="{{element.name}}">{{element.text}}: </label>
+              <td>
+                <input type="radio" name="{{element.radio}}" id="{{element.name}}" />
+              </td>
+              <td>
+                <label for="{{element.name}}">{{element.text}}: </label>
+              </td>
             </tr>
           {{/if}}
         {{/each}}
@@ -152,4 +66,10 @@
       {{/each}}
     </div>
   {{/each}}
+  <div class="upload-section">
+    <input type="file" name="name" multiple><br><br>
+  </div>
+
 </div>
+
+<button>Submit</button>
