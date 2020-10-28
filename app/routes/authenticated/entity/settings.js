@@ -4,6 +4,6 @@ import { inject as service } from '@ember/service';
 export default class SettingsRoute extends Route {
   @service store;
   async model(params) {
-    return this.store.findRecord('user', params.user_id);
+    return this.store.findRecord('user', '1');
   }
 }

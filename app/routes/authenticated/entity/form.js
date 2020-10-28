@@ -31,8 +31,6 @@ export default class FormRoute extends Route {
       category: this.get('controller').get('category')
     });
 
-    console.log(newJob);
-
     let self = this;
 
     function transitionTonewJob(job) {
@@ -43,7 +41,6 @@ export default class FormRoute extends Route {
       // handle the error
     }
 
-    console.log('hello');
     newJob
     .save()
     .then(transitionTonewJob)
