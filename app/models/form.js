@@ -1,8 +1,10 @@
-import Model, { attr } from '@ember-data/model';
+
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
+
 export default class FormModel extends Model {
   @attr name;
   @attr sections;
   @attr description;
-  @attr entity;
 
+  @belongsTo('entity', { inverse: 'forms' }) entity;
 }

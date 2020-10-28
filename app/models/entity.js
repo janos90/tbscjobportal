@@ -1,8 +1,14 @@
-  import Model, { attr } from '@ember-data/model';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
   export default class JobModel extends Model {
     @attr name;
-    @attr provides;
-    @attr suppliers;
-    @attr forms;
     @attr image;
+
+    @hasMany('entity', { inverse: 'suppliers' }) providers;
+    @hasMany('entity', { inverse: 'providers' }) suppliers;
+
+    @belongsTo('entity', { inverse: 'children' }) parent;
+    @hasMany('entity', { inverse: 'parent' }) children;
+
+    @hasMany('form', { inverse: 'permissions' }) forms;
+
   }

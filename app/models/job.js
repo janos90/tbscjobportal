@@ -1,4 +1,4 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 export default class JobModel extends Model {
   @attr jobNumber;
   @attr status;
@@ -10,9 +10,11 @@ export default class JobModel extends Model {
   @attr bedrooms;
   @attr createdBy;
   @attr createdAt;
-  @attr entity;
-  @attr form;
-  @attr files;
   @attr description;
   @attr category;
+
+  @belongsTo('entity', { inverse: null }) entity;
+  @belongsTo('form', { inverse: null }) form;
+  @hasMany('file', { inverse: 'job' }) files;
+
 }
