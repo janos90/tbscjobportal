@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "id": "60",
+      "type": "permission",
+      "attributes": {
+        "entity": "1",
+        "user": "20",
+        "level":"full"
+      }
+    },  {
+      "id": "61",
+      "type": "permission",
+      "attributes": {
+        "entity": "2",
+        "user": "20",
+        "level":"read"
+      }
+    }
+  ]
+  }
