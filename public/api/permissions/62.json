@@ -1,0 +1,12 @@
+{
+  "data":
+    {
+      "id": "61",
+      "type": "permission",
+      "attributes": {
+        "entity": "1",
+        "user": "21",
+        "level":"full"
+      }
+    }
+  }
