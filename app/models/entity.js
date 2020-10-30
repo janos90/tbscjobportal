@@ -9,6 +9,6 @@ import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
     @belongsTo('entity', { inverse: 'children' }) parent;
     @hasMany('entity', { inverse: 'parent' }) children;
 
-    @hasMany('form', { inverse: 'permissions' }) forms;
-
+    @hasMany('form', { inverse: 'entity' }) forms;
+    @hasMany('permission', { inverse: 'entity' }) permissions;
   }
