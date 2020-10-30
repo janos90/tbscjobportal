@@ -3,7 +3,11 @@
   <button class="pull-right logout-button" {{action 'logout'}}>
     logout
   </button>
+  <button class="pull-right logout-button" {{action 'createEntity'}}>
+    Add an entity
+  </button>
 </div>
+
 <div class="tile-box">
   {{#each @model as |entity|}}
     <LinkTo @route="authenticated.entity" class="job-link" @model={{entity}}>

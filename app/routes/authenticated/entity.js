@@ -9,13 +9,12 @@ export default class EntityRoute extends Route {
   async model(params) {
     return this.store.findRecord('entity',params.entity_id );
   }
-  
+
   @action
   logout() {
     this.transitionTo('login');
   }
-
   isAdmin() {
-    return true;
+    return false;
   }
 }
