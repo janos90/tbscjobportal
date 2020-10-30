@@ -1,0 +1,93 @@
+<div class="page-header">
+  <h1 class="pull-left header-text">Create New Entity</h1>
+  <button class="pull-right logout-button" {{action 'logout'}}>
+    logout
+  </button>
+  <button class="pull-right logout-button" {{action 'createEntity'}}>
+    Add an entity
+  </button>
+</div>
+<div class="page-wraper">
+
+  <div class="outlet-wraper">
+
+<form class="create-entity-form">
+  <table>
+    <tr class="form-row">
+      <td><label class="settings-label" for="name">Name:</label></td>
+      <td>
+        <Input
+        @type="text"
+        @id="name"
+        @name="name"
+        @value={{name}}
+        />
+      </td>
+    </tr>
+
+    <tr class="form-row">
+      <td><label class="settings-label" for="image">Image:</label></td>
+      <td>
+        <Input
+        @type="text"
+        @id="image"
+        @name="image"
+        @value={{image}}
+        />
+      </td>
+    </tr>
+
+    <tr class="form-row">
+      <td><label class="settings-label" for="providers">providers:</label></td>
+      <td>
+        <ul>
+          {{#each model as |entity|}}
+            <li>
+              <label>{{entity.name}}
+                <input type="checkbox" onChange={{action 'updateProviders' entity}} />
+              </label>
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="form-row">
+      <td><label class="settings-label" for="providers">suppliers:</label></td>
+      <td>
+        <ul>
+          {{#each model as |entity|}}
+            <li>
+              <label>{{entity.name}}
+                <input type="checkbox" onChange={{action 'updateSuppliers' entity}} />
+              </label>
+            </li>
+          {{/each}}
+        </ul>
+
+      </td>
+    </tr>
+
+
+    <tr class="form-row">
+      <td><label class="settings-label" for="providers">parent:</label></td>
+      <td>
+        <ul>
+          {{#each model as |entity|}}
+            <li>
+              <label>{{entity.name}}
+                <input type="radio" onChange={{action 'updateParent' entity}} />
+              </label>
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+    </tr>
+
+
+  </table>
+  <button class="settings-submit pull-right" {{action "saveEntity"}}>Save</button>
+</form>
+
+</div>
+</div>

@@ -18,5 +18,6 @@ Router.map(function() {
       this.route('entitysettings');
       this.route('settings');
     });
+    this.route('create-entity');
   })
 });
