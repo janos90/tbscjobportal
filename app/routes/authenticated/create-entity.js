@@ -46,6 +46,11 @@ export default class AuthenticatedCreateEntityRoute extends Route {
   }
 
   @action
+  selectEntity(){
+    this.transitionTo('authenticated.entities');
+  }
+
+  @action
   updateProviders(value) {
     console.log('value', value);
 }

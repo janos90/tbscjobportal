@@ -19,4 +19,15 @@ export default class EntityRoute extends Route {
     })
 
   }
+
+  @action
+  deleteEntity() {
+    let self = this;
+    model.deleteRecord()
+    model.save().then(function() {
+      self.transitionTo('authenticated.entities');
+    })
+
+  }
+
 }

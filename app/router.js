@@ -19,5 +19,6 @@ Router.map(function() {
       this.route('settings');
     });
     this.route('create-entity');
+    this.route('manage-users');
   })
 });
