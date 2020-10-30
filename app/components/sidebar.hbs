@@ -14,5 +14,11 @@
     <LinkTo @route="authenticated.entity.settings" class="sidebar-list-item">
       {{fa-icon "cog"}} Settings
     </LinkTo>
+    {{#if @owner}}
+      <LinkTo @route="authenticated.entity.entitysettings" class="sidebar-list-item">
+        {{fa-icon "cog"}} Entity Settings
+      </LinkTo>
+    {{/if}}
+
   </div>
 </div>

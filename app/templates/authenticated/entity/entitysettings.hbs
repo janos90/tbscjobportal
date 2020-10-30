@@ -1,0 +1,37 @@
+<h1> Settings for {{@model.name}}</h1>
+<form class="settings-form">
+  <table>
+    <tr class="form-row">
+      <td><label class="settings-label" for="name">Username:</label></td>
+      <td>
+        <Input
+        @type="text"
+        @id="name"
+        @name="name" placeholder="{{@model.name}}"
+        @value={{name}}
+        />
+      </td>
+    </tr>
+
+    <tr class="form-row">
+      <td><label class="settings-label" for="image">Image:</label></td>
+      <td>
+        <Input
+        @type="text"
+        @id="image"
+        @name="image" placeholder="{{@model.image}}"
+        @value={{image}}
+        />
+      </td>
+    </tr>
+    <tr class="form-row">
+      <td>Current image:</td>
+      <td>
+        <img src="{{@model.image}}" />
+      </td>
+    </tr>
+
+
+  </table>
+  <button class="settings-submit pull-right" type="submit">Save</button>
+</form>
