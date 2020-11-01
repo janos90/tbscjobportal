@@ -1,1 +1,5 @@
-{{outlet}}
+<select onChange={{action 'selectUser'}}>
+  {{#each model as |user|}}
+    <option value={{user}}></option>
+  {{/each}}
+</select>

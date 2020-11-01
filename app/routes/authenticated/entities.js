@@ -26,4 +26,16 @@ export default class EntitiesRoute extends Route {
   createEntity() {
     this.transitionTo('authenticated.create-entity');
   }
+
+  @action
+  createUser() {
+    this.transitionTo('authenticated.create-users');
+  }
+
+
+  @action
+  manageUsers() {
+    this.transitionTo('authenticated.manage-users');
+  }
+
 }

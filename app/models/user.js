@@ -14,5 +14,4 @@ export default class JobModel extends Model {
   get fullName() {
     return this.firstName + " " + this.lastName;
   }
-
 }
