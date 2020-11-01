@@ -12,6 +12,8 @@ export default class EntityRoute extends Route {
   @action
   saveEntity() {
     let self = this;
+    let model = this.modelFor('authenticated.entity');
+
     model.name = this.get('controller').get('name')
     model.image = this.get('controller').get('image')
     model.save().then(function() {
@@ -22,6 +24,8 @@ export default class EntityRoute extends Route {
 
   @action
   deleteEntity() {
+    let model = this.modelFor('authenticated.entity');
+
     let self = this;
     model.deleteRecord()
     model.save().then(function() {

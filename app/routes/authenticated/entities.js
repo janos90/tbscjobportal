@@ -7,9 +7,11 @@ export default class EntitiesRoute extends Route {
   @service store;
   @service session;
 
-  // beforeModel(transition) {
-  //   this.get('session').requireAuthentication(transition, 'login');
-  // }
+  beforeModel(transition) {
+    if(!this.session.data.user) {
+      this.transitionTo('login')
+    }
+  }
 
   async model() {
     return this.store.findAll('entity')

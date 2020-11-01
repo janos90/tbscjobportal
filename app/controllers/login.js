@@ -7,20 +7,8 @@ export default class LoginController extends Controller {
   @tracked errorMessage;
   @service session;
 
-  // @action
-  // async authenticate(e) {
-  //   e.preventDefault();
-  //   let { identification, password } = this;
-  //   try {
-  //     await this.session.authenticate('authenticator:oauth2', identification, password);
-  //   } catch(error) {
-  //     this.errorMessage = error.error || error;
-  //   }
-  //
-  //   if (this.session.isAuthenticated) {
-  //     // What to do with all this success?
-  //   }
-  // }
+  @tracked identification;
+  @tracked password;
 
   @action
   updateIdentification(e) {
@@ -36,10 +24,12 @@ export default class LoginController extends Controller {
     let self=this;
     this.store.query('user', {
       filter: {
-        username: this.identification,
+        userName: this.identification,
         password: this.password
       }
-    }).then(function(user) {
+    }).then(function(users) {
+      let user = users.get('firstObject')
+      console.log("then user query: ", user);
       self.session.data.user = user;
       self.transitionToRoute('authenticated.entities');
     })

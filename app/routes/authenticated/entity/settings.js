@@ -4,8 +4,10 @@ import { action } from '@ember/object';
 
 export default class SettingsRoute extends Route {
   @service store;
+  @service session;
+
   async model(params) {
-    return this.store.findRecord('user', '20');
+    return this.store.findRecord('user', this.session.data.user.id);
   }
 
   @action
