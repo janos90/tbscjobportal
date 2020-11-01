@@ -17,4 +17,9 @@ export default class EntityRoute extends Route {
   isAdmin() {
     return false;
   }
+  @action
+  selectEntity(){
+    this.transitionTo('authenticated.entities');
+  }
+
 }

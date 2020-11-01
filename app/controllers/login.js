@@ -7,20 +7,20 @@ export default class LoginController extends Controller {
   @tracked errorMessage;
   @service session;
 
-  @action
-  async authenticate(e) {
-    e.preventDefault();
-    let { identification, password } = this;
-    try {
-      await this.session.authenticate('authenticator:oauth2', identification, password);
-    } catch(error) {
-      this.errorMessage = error.error || error;
-    }
-
-    if (this.session.isAuthenticated) {
-      // What to do with all this success?
-    }
-  }
+  // @action
+  // async authenticate(e) {
+  //   e.preventDefault();
+  //   let { identification, password } = this;
+  //   try {
+  //     await this.session.authenticate('authenticator:oauth2', identification, password);
+  //   } catch(error) {
+  //     this.errorMessage = error.error || error;
+  //   }
+  //
+  //   if (this.session.isAuthenticated) {
+  //     // What to do with all this success?
+  //   }
+  // }
 
   @action
   updateIdentification(e) {
@@ -30,5 +30,18 @@ export default class LoginController extends Controller {
   @action
   updatePassword(e) {
     this.password = e.target.value;
+  }
+  @action
+  async login() {
+    let self=this;
+    this.store.query('user', {
+      filter: {
+        username: this.identification,
+        password: this.password
+      }
+    }).then(function(user) {
+      self.session.data.user = user;
+      self.transitionToRoute('authenticated.entities');
+    })
   }
 }

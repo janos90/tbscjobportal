@@ -4,9 +4,13 @@
   </div>
   <div class="page-header-panel">
     <h1 class="pull-left header-text">{{@model.name}}</h1>
+    <button class="pull-right logout-button" {{action 'selectEntity'}}>
+      Select Entity
+    </button>
     <button class="pull-right logout-button" {{action 'logout'}}>
       logout
     </button>
+
   </div>
 </div>
 

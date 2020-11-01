@@ -14,15 +14,7 @@
       </div>
     </body>
     <footer class="form-footer">
-      <ul>
-      {{#each model as |user|}}
-      <li>
-        <LinkTo @route="authenticated.entities">
-          log in as {{user.fullName}}
-        </LinkTo>
-      </li>
-      {{/each}}
-    </ul>
+      <button {{action 'login'}}> Log in </button>
     </footer>
   </form>
 </div>
