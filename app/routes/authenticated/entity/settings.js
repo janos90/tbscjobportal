@@ -6,13 +6,21 @@ export default class SettingsRoute extends Route {
   @service store;
   @service session;
 
-  async model(params) {
+  beforeModel(transition) {
+    if(!this.session.data.user) {
+      this.transitionTo('login')
+    }
+  }
+
+
+  async model() {
     return this.store.findRecord('user', this.session.data.user.id);
   }
 
   @action
   saveUser() {
     let self = this;
+    let model = this.session.data.user
     model.userName = this.get('controller').get('userName')
     model.password = this.get('controller').get('password')
     model.firstName = this.get('controller').get('firstName')
