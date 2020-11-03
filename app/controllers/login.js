@@ -34,4 +34,9 @@ export default class LoginController extends Controller {
       self.transitionToRoute('authenticated.entities');
     })
   }
+  @action
+  forgotPassword() {
+    alert("to Reset password, email juan@jpgnco.com")
+  }
+
 }
