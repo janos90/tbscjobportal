@@ -33,6 +33,7 @@ export default class LoginController extends Controller {
       self.session.data.user = user;
       self.transitionToRoute('authenticated.entities');
     }).catch(function(error) {
+      console.log(error);
       alert("Wrong Username or Password")
     })
   }
