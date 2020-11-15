@@ -2,7 +2,7 @@
 
 </script>
 
-<h1> Settings for {{@model.fullName}}</h1>
+<h1 class="settings-header"> Settings for {{@model.fullName}}</h1>
 <form class="settings-form">
   <table>
     <tr class="form-row">
@@ -67,5 +67,5 @@
       </td>
     </tr>
   </table>
-  <button class="settings-submit pull-right" {{action 'saveUser'}}>Save</button>
+  <button class="settings-submit pull-right saveUser" {{action 'saveUser'}}>Save</button>
 </form>

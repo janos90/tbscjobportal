@@ -15,8 +15,6 @@ module('Acceptance | form', function(hooks) {
       entity: newEntity
     });
 
-    let sections = this.server.createList("section", 10, {form: newform});
-
 
     await visit('/login');
     await fillIn('input#login-username', 'userName 1');

@@ -18,6 +18,7 @@ export default function() {
     return schema.users.find(request.params.id);
   });
   this.post('/users');
+  this.patch('/users/:id');
 
   this.get('/entities', (schema, request) => {
     return schema.entities.all();

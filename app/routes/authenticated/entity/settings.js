@@ -20,14 +20,22 @@ export default class SettingsRoute extends Route {
   @action
   saveUser() {
     let self = this;
-    let model = this.session.data.user
+    let model = this.get('controller').get('model');
     model.userName = this.get('controller').get('userName')
     model.password = this.get('controller').get('password')
     model.firstName = this.get('controller').get('firstName')
     model.lastName = this.get('controller').get('lastName')
-    model.save().then(function() {
-      this.session.data.user = model;
-      self.transitionTo('authenticated.entity.jobs');
+    function failure(reason) {
+      alert('changing user failed', reason)
+      console.log(reason);
+    }
+
+    model
+    .save()
+    .then(function() {
+      self.session.data.user = model;
+      self.transitionTo('authenticated.entity');
     })
+    .catch(failure);
   }
 }
