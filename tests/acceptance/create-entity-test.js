@@ -7,7 +7,7 @@ module('Acceptance | Create Entity', function(hooks) {
   setupApplicationTest(hooks);
   setupMirage(hooks);
 
-  test('visiting /forms', async function(assert) {
+  test('create-entity', async function(assert) {
     let newUser = this.server.create("user", {userName: 'userName 1', password: 'password 1', role: 'admin'});
     let newEntity = this.server.create("entity", {name: 'userName 1'});
     let newPermission = this.server.create("permission", {user: newUser, entity: newEntity});

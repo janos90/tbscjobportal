@@ -17,6 +17,7 @@ export default function() {
   this.get('/users/:id', (schema, request) => {
     return schema.users.find(request.params.id);
   });
+  this.post('/users');
 
   this.get('/entities', (schema, request) => {
     return schema.entities.all();

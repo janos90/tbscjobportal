@@ -11,8 +11,8 @@ export default class AuthenticatedManageUsersRoute extends Route {
     if(!this.session.data.user) {
       this.transitionTo('login');
     } else if (!(this.session.data.user.role === 'admin')) {
-      alert('Warning youre not an admin');
-      // this.transitionTo('login');
+      // alert('Warning youre not an admin');
+      this.transitionTo('/entities');
     }
   }
 
