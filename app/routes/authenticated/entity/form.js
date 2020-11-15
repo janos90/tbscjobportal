@@ -155,7 +155,7 @@ export default class FormRoute extends Route {
         }
       ]
     }`)
-    return this.get('store').find('form', params.form_id)
+    // return this.get('store').find('form', params.form_id)
   }
 
   @action
