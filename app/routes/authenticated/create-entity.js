@@ -32,7 +32,8 @@ export default class AuthenticatedCreateEntityRoute extends Route {
     }
 
     function failure(reason) {
-      alert('Creating Entity failed')
+      alert('Creating Entity failed', reason)
+      console.log(reason);
     }
 
     newEntity

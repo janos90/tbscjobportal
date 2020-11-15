@@ -24,6 +24,7 @@ export default function() {
   this.get('/entities/:id', (schema, request) => {
     return schema.entities.find(request.params.id);
   });
+  this.post('/entities');
 
   this.get('/forms', (schema, request) => {
     return schema.forms.all();
