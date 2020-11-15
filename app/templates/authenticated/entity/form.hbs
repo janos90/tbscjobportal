@@ -7,14 +7,14 @@
     <h3>basic info</h3>
   </header>
     <div class="checkboxContainer">
-      <label >Title <Input @type='text' @value={{title}} /> </label> <br />
-      <label >Owner <Input @type='text' @value={{owner}} /> </label> <br />
-      <label >Suburb <Input @type='text' @value={{suburb}} /> </label> <br />
-      <label >City <Input @type='text' @value={{city}} /> </label> <br />
-      <label >Address <Input @type='text' @value={{address}} /> </label> <br />
-      <label >Number of bedrooms <Input @type='text' @value={{bedrooms}} /> </label> <br />
-      <label >Description <Input @type='text' @value={{description}} /> </label> <br />
-      <label >Category <Input @type='text' @value={{category}} /> </label> <br />
+      <label >Title <Input class='form-title' @type='text' @value={{title}} /> </label> <br />
+      <label >Owner <Input class='form-owner' @type='text' @value={{owner}} /> </label> <br />
+      <label >Suburb <Input class='form-suburb' @type='text' @value={{suburb}} /> </label> <br />
+      <label >City <Input class='form-city' @type='text' @value={{city}} /> </label> <br />
+      <label >Address <Input class='form-address' @type='text' @value={{address}} /> </label> <br />
+      <label >Number of bedrooms <Input class='form-bedrooms' @type='text' @value={{bedrooms}} /> </label> <br />
+      <label >Description <Input class='form-description' @type='text' @value={{description}} /> </label> <br />
+      <label >Category <Input class='form-category' @type='text' @value={{category}} /> </label> <br />
     </div>
 
 
@@ -92,4 +92,4 @@
 
 </div>
 
-<button {{action "saveJob"}}>Submit</button>
+<button class="form-save" {{action "saveJob"}}>Submit</button>

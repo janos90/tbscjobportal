@@ -27,7 +27,18 @@ module('Acceptance | form', function(hooks) {
     await click('.form-'+ newform.id);
     assert.equal(currentURL(), '/entity/'+newEntity.id+'/form/'+newform.id);
 
-    // await pauseTest();
+    await fillIn('input.form-title', 'form-title 1');
+    await fillIn('input.form-owner', 'form-owner 1');
+    await fillIn('input.form-suburb', 'form-suburb 1');
+    await fillIn('input.form-city', 'form-city 1');
+    await fillIn('input.form-address', 'form-address 1');
+    await fillIn('input.form-bedrooms', 'form-bedrooms 1');
+    await fillIn('input.form-description', 'form-description 1');
+    await fillIn('input.form-category', 'form-category 1');
+
+    await click('.form-save');
+
+    assert.equal(currentURL(), '/entity/'+newEntity.id+'/form/'+newform.id);
 
   })
 });

@@ -26,6 +26,7 @@ export default class SettingsRoute extends Route {
     model.firstName = this.get('controller').get('firstName')
     model.lastName = this.get('controller').get('lastName')
     model.save().then(function() {
+      this.session.data.user = model;
       self.transitionTo('authenticated.entity.jobs');
     })
   }

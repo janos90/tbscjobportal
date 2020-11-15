@@ -32,5 +32,21 @@ export default function() {
     return schema.forms.find(request.params.id);
   });
 
+  this.get('/sections', (schema, request) => {
+    return schema.sections.all();
+  });
+  this.get('/sections/:id', (schema, request) => {
+    return schema.sections.find(request.params.id);
+  });
+
+  this.get('/elements', (schema, request) => {
+    return schema.elements.all();
+  });
+  this.get('/elements/:id', (schema, request) => {
+    return schema.elements.find(request.params.id);
+  });
+
+
+
 
 }
