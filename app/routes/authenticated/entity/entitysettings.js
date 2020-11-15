@@ -17,7 +17,7 @@ export default class EntityRoute extends Route {
     model.name = this.get('controller').get('name')
     model.image = this.get('controller').get('image')
     model.save().then(function() {
-      self.transitionTo('authenticated.entity.jobs');
+      self.transitionTo('authenticated.entity');
     })
 
   }

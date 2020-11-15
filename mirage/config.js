@@ -27,6 +27,7 @@ export default function() {
     return schema.entities.find(request.params.id);
   });
   this.post('/entities');
+  this.patch('/entities/:id');
 
   this.get('/forms', (schema, request) => {
     return schema.forms.all();
