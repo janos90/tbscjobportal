@@ -3,7 +3,7 @@
     "id": "11",
     "type": "form",
     "attributes": {
-      "form-name": "Thomsons ITM Basic form",
+      "name": "Thomsons ITM Basic form",
       "sections": [
         {
           "title": "header",

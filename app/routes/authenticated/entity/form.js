@@ -11,7 +11,151 @@ export default class FormRoute extends Route {
 
 
   async model(params) {
-    return this.get('store').find('form', params.form_id, { include: 'sections, sections.sections, sections.elements, sections.sections.elements' })
+    return JSON.parse(`{
+      "name": "Thomsons ITM Basic form",
+      "sections": [
+        {
+          "title": "header",
+          "sections": [
+            {
+              "title": "Thomsons Timber Supplies Limited",
+              "elements": [
+                {"text":"", "image": "https://www.thomsonsitm.co.nz/themes/ThomsonsITM/images/logo.png", "background":"#000000"}
+              ]
+            }, {
+              "title": "For Office Use Only",
+              "elements": [
+                {"text": "Frames/Trusses", "input":"text", "name": "officeFramesTrusses"},
+                {"text": "Discount Group", "input":"text", "name": "officeDiscountGroup"},
+                {"text": "Reason",         "input":"text", "name": "officeReason"}
+              ]
+            }
+          ]
+        }, {
+          "title": "Estimate Request",
+          "sections": [
+            {
+              "title": "Client",
+              "elements": [
+                {"text": "Client Name",     "input":"text",                         "name": "clientName"},
+                {"text": "Phone number",    "input":"text",                         "name": "clientPhoneNumber"},
+                {"text": "Mobile",          "input":"text",                         "name": "clientMobileNumber"},
+                {"text": "Date",            "input":"text",                         "name": "clientDate"},
+                {"text": "Client Address",  "input":"textArea",                     "name": "clientAddress"},
+                {"text": "Auckland",        "input":"radio",    "radio":"location", "name": "clientLocationAuckland"},
+                {"text": "Waikato",         "input":"radio",    "radio":"location", "name": "clientLocationWaikato"}
+              ]
+            }, {
+              "title": "Job",
+              "elements": [
+                {"text": "Job Name",            "input":"text",     "name": "jobName"},
+                {"text": "Company/Branch name", "input":"text",     "name": "companyName"},
+                {"text": "Est. Pre-nail Date",  "input":"text",     "name": "prenailDate"},
+                {"text": "Site Address",        "input":"textArea", "name": "jobAddress"},
+                {"text": "Notify to Skip",      "input":"checkbox", "name": "notifySkip"},
+                {"text": "Notify to Luci",      "input":"checkbox", "name": "notifyLuci"}
+              ]
+            }
+          ]
+        }, {
+          "title": "Tick the items below required to be estimated",
+          "sections": [
+            {
+              "title": "",
+              "elements": [
+                {"text": "Truss Layout, PS1 only",      "input":"checkbox", "name": "trussPS1"},
+                {"text": "Full Buildable Layouts",      "input":"checkbox", "name": "fBLayouts"},
+                {"text": "Detailing",      "input":"checkbox", "name": "detailing"},
+                {"text": "Steel Reinforcing",      "input":"checkbox", "name": "steelReinforcing"},
+                {"text": "Pre-Bent R/Steel",      "input":"checkbox", "name": "preBentSteel"},
+                {"text": "Rib-raft",      "input":"checkbox", "name": "ribRaft"},
+                {"text": "Masonry",      "input":"checkbox", "name": "masonry"},
+                {"text": "Concrete",      "input":"checkbox", "name": "concrete"}
+              ]
+            }, {
+              "title": "",
+              "elements": [
+                {"text": "Prenail",      "input":"checkbox", "name": "prenail"},
+                {"text": "Trusses/Rafters",      "input":"checkbox", "name": "trussRaft"},
+                {"text": "Roof Pack",      "input":"checkbox", "name": "roofPack"},
+                {"text": "Random",      "input":"checkbox", "name": "random"},
+                {"text": "Sub-floor",      "input":"checkbox", "name": "subFloor"},
+                {"text": "Mid-floor",      "input":"checkbox", "name": "midFloor"},
+                {"text": "Deck",      "input":"checkbox", "name": "deck"}
+              ]
+            }, {
+              "title": "",
+              "elements": [
+                {"text": "Cladding",      "input":"checkbox", "name": "cladding"},
+                {"text": "Insulation Only",      "input":"checkbox", "name": "insulationOnly"},
+                {"text": "Insulation Installed",      "input":"checkbox", "name": "insulationInstalled"},
+                {"text": "Plasterboard",      "input":"checkbox", "name": "plasterboard"},
+                {"text": "Plasterboard D.T.S",      "input":"checkbox", "name": "plasterboardDTS"},
+                {"text": "Internal Linings",      "input":"checkbox", "name": "internalLinings"},
+                {"text": "Internal Doors",      "input":"checkbox", "name": "internalDoors"}
+              ]
+            }, {
+              "title": "",
+              "elements": [
+                {"text": "Timber Fascia",      "input":"checkbox", "name": "timberFascia"},
+                {"text": "Marley Gutter / D.P",      "input":"checkbox", "name": "marleyGutterDP"},
+                {"text": "Roofing",      "input":"checkbox", "name": "roofing"},
+                {"text": "Aluminium Joinery",      "input":"checkbox", "name": "alJoinery"},
+                {"text": "Pergola",      "input":"checkbox", "name": "pergola"},
+                {"text": "Retaining Wall",      "input":"checkbox", "name": "retainingWall"}
+              ]
+            }
+          ]
+        }, {
+          "title": "Bulding Zones",
+          "sections": [
+            {
+              "title": "Wind Zone",
+              "elements": [
+                {"text": "Low Wind",        "input":"radio",    "radio":"wind", "name": "lowWind"},
+                {"text": "Medium Wind",        "input":"radio",    "radio":"wind", "name": "medWind"},
+                {"text": "High Wind",        "input":"radio",    "radio":"wind", "name": "highWind"},
+                {"text": "Very High Wind",        "input":"radio",    "radio":"wind", "name": "vHighWind"},
+                {"text": "Extra High Wind",        "input":"radio",    "radio":"wind", "name": "eHighWind"}
+              ]
+            }, {
+              "title": "Corrosion Zone",
+              "elements": [
+                {"text": "Zone A: None",        "input":"radio",    "radio":"corrosion", "name": "noneCorrosion"},
+                {"text": "Zone B: Low",        "input":"radio",    "radio":"corrosion", "name": "lowCorrosion"},
+                {"text": "Zone C: Medium",        "input":"radio",    "radio":"corrosion", "name": "medCorrosion"},
+                {"text": "Zone D: High",        "input":"radio",    "radio":"corrosion", "name": "highCorrosion"}
+              ]
+            }
+          ]
+        }, {
+          "title": "Product Specifications",
+          "sections": [
+            {
+              "title": "",
+              "elements": [
+                {"text": "Interior Doors",        "input":"text",    "name": "specIntDoors"},
+                {"text": "Door Hardware",        "input":"text",    "name": "specDoorHardware"},
+                {"text": "Scotia",           "input":"text",    "name": "specScotia"},
+                {"text": "Skirting",        "input":"text",    "name": "specSkirting"},
+                {"text": "Architraves",        "input":"text",    "name": "specArchitraves"}
+              ]
+            }
+          ]
+        }, {
+          "title": "Alterations",
+          "sections": [
+            {
+              "title": "",
+              "elements": [
+                {"text": "Alterations",        "input":"textArea",    "name": "alterations"}
+              ]
+            }
+          ]
+        }
+      ]
+    }`)
+    return this.get('store').find('form', params.form_id)
   }
 
   @action
