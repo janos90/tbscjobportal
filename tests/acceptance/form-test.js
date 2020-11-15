@@ -14,7 +14,7 @@ module('Acceptance | form', function(hooks) {
     let newform = this.server.create("form", {
       entity: newEntity
     });
-    
+
     let sections = this.server.createList("section", 10, {form: newform});
 
 
@@ -44,7 +44,7 @@ module('Acceptance | form', function(hooks) {
     await click('.form-save');
 
     assert.equal(currentURL(), '/entity/'+newEntity.id+'/form/'+newform.id);
-    await pauseTest();
+    // await pauseTest();
 
 
   })
