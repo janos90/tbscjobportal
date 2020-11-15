@@ -11,7 +11,12 @@ module('Acceptance | form', function(hooks) {
     let newUser = this.server.create("user", {userName: 'userName 1', password: 'password 1'});
     let newEntity = this.server.create("entity", {name: 'userName 1'});
     let newPermission = this.server.create("permission", {user: newUser, entity: newEntity});
-    let newform = this.server.create("form", {entity: newEntity});
+    let newform = this.server.create("form", {
+      entity: newEntity
+    });
+    
+    let sections = this.server.createList("section", 10, {form: newform});
+
 
     await visit('/login');
     await fillIn('input#login-username', 'userName 1');
@@ -39,6 +44,8 @@ module('Acceptance | form', function(hooks) {
     await click('.form-save');
 
     assert.equal(currentURL(), '/entity/'+newEntity.id+'/form/'+newform.id);
+    await pauseTest();
+
 
   })
 });

@@ -11,9 +11,7 @@ export default class FormRoute extends Route {
 
 
   async model(params) {
-    return RSVP.hash({
-      form: this.get('store').find('form', params.form_id, { include: 'sections,sections.sections,sections.elements,sections.sections.elements' })
-    })
+    return this.get('store').find('form', params.form_id, { include: 'sections, sections.sections, sections.elements, sections.sections.elements' })
   }
 
   @action
@@ -29,7 +27,7 @@ export default class FormRoute extends Route {
       createdBy: this.session.data.user.fullName,
       entity: this.get('controller').get(''),
       form: this.get('model'),
-      files: this.get('controller').get(''),
+      files: [],
       description: this.get('controller').get('description'),
       category: this.get('controller').get('category')
     });

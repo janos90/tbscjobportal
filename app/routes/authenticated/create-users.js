@@ -34,7 +34,6 @@ export default class AuthenticatedManageUsersRoute extends Route {
     let self = this;
 
     function transitionToEntities() {
-      console.log('navigate');
       self.transitionTo('authenticated.entities');
     }
 

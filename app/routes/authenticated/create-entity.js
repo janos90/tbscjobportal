@@ -28,12 +28,10 @@ export default class AuthenticatedCreateEntityRoute extends Route {
     let self = this;
 
     function transitionToNewEntity(entity) {
-      console.log('navigate');
       self.transitionTo('authenticated.entity', entity);
     }
 
     function failure(reason) {
-      console.log(reason);
       alert('Creating Entity failed')
     }
 
@@ -56,6 +54,6 @@ export default class AuthenticatedCreateEntityRoute extends Route {
 
   @action
   updateProviders(value) {
-    console.log('value', value);
-}
+    // console.log('value', value);
+  }
 }
