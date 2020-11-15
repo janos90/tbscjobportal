@@ -2,7 +2,6 @@
 
 module.exports = function(environment) {
   let ENV = {
-    apiHost: 'http://localhost:4000',
     modulePrefix: 'tbscjobportal',
     environment,
     rootURL: '/',
