@@ -7,4 +7,8 @@ export default class FormModel extends Model {
   @attr description;
 
   @belongsTo('entity', { inverse: 'forms' }) entity;
+
+  @hasMany('entity', { inverse: 'listings' }) suppliers;
+  @hasMany('section', { inverse: 'form' }) sections;
+
 }

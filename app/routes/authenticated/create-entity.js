@@ -16,6 +16,9 @@ export default class AuthenticatedCreateEntityRoute extends Route {
     var newEntity = this.store.createRecord('entity', {
       name: this.get('controller').get('name'),
       image: this.get('controller').get('image'),
+      email: this.get('controller').get('email'),
+      phone: this.get('controller').get('phone'),
+      address: this.get('controller').get('address'),
 
       providers: this.get('controller').get('providers'),
       suppliers: this.get('controller').get('suppliers'),
@@ -24,18 +27,19 @@ export default class AuthenticatedCreateEntityRoute extends Route {
 
     let self = this;
 
-    function transitionTonewEntity(entity) {
+    function transitionToNewEntity(entity) {
       console.log('navigate');
       self.transitionTo('authenticated.entity', entity);
     }
 
     function failure(reason) {
-      alert('hello')
+      console.log(reason);
+      alert('Creating Entity failed')
     }
 
     newEntity
     .save()
-    .then(transitionTonewEntity)
+    .then(transitionToNewEntity)
     .catch(failure);
 
   }
