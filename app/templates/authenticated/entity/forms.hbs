@@ -19,7 +19,7 @@
   </div>
 
   {{#each @model as |form|}}
-  <LinkTo @route="authenticated.entity.form" @model={{form}} class="job-link">
+  <LinkTo @route="authenticated.entity.form" @model={{form}} class="job-link form-{{form.id}}">
     <div class="job-row">
       <div class="job-text">
         <header>

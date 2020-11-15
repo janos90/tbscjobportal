@@ -5,17 +5,17 @@
     </h1>
   </header>
   <div class="sidebar-list">
-    <LinkTo @route="authenticated.entity.forms" class="sidebar-list-item">
+    <LinkTo @route="authenticated.entity.forms" class="sidebar-list-item formsLink">
         {{fa-icon "file"}} Forms
     </LinkTo>
-    <LinkTo @route="authenticated.entity.jobs" class="sidebar-list-item">
+    <LinkTo @route="authenticated.entity.jobs" class="sidebar-list-item jobsLink">
       {{fa-icon "th-list"}} Jobs
     </LinkTo>
-    <LinkTo @route="authenticated.entity.settings" class="sidebar-list-item">
+    <LinkTo @route="authenticated.entity.settings" class="sidebar-list-item settingsLink">
       {{fa-icon "cog"}} Settings
     </LinkTo>
     {{#if @owner}}
-      <LinkTo @route="authenticated.entity.entitysettings" class="sidebar-list-item">
+      <LinkTo @route="authenticated.entity.entitysettings" class="sidebar-list-item eSettingsLink">
         {{fa-icon "cog"}} Entity Settings
       </LinkTo>
     {{/if}}

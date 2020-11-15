@@ -25,4 +25,12 @@ export default function() {
     return schema.entities.find(request.params.id);
   });
 
+  this.get('/forms', (schema, request) => {
+    return schema.forms.all();
+  });
+  this.get('/forms/:id', (schema, request) => {
+    return schema.forms.find(request.params.id);
+  });
+
+
 }
