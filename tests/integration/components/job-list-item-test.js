@@ -6,21 +6,18 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | job-list-item', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders job information', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<JobListItem />`);
+    this.set('job', {
+      jobNumber: 1,
+      status: 'open'
+    })
 
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`<Jobli @job={{this.job}} />`);
 
-    // Template block usage:
-    await render(hbs`
-      <JobListItem>
-        template block text
-      </JobListItem>
-    `);
+    assert.equal(this.element.textContent.trim(), 'Job Number: 1\n        \n          Status: open');
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
