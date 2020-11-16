@@ -6,6 +6,13 @@ import { action } from '@ember/object';
 
 export default class EntityRoute extends Route {
   @service store;
+  @service session;
+  beforeModel(transition) {
+    if(!this.session.data.user) {
+      this.transitionTo('login')
+    }
+  }
+
   async model(params) {
     return this.store.findRecord('entity',params.entity_id );
   }

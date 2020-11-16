@@ -29,7 +29,6 @@ export default class LoginController extends Controller {
       }
     }).then(function(users) {
       let user = users.get('firstObject')
-      console.log("then user query: ", user);
       self.session.data.user = user;
       self.transitionToRoute('authenticated.entities');
     }).catch(function(error) {
