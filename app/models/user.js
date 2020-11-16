@@ -10,6 +10,7 @@ export default class JobModel extends Model {
   @attr role
 
   @hasMany('permission', { inverse: 'user' }) permissions;
+  @hasMany('job', { inverse: 'createdBy' }) jobs;
 
   get fullName() {
     return this.firstName + " " + this.lastName;

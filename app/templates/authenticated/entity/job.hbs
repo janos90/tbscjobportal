@@ -56,7 +56,7 @@
       CreatedBy:
     </td>
     <td>
-       {{@model.createdBy}}
+       {{@model.createdBy.fullName}}
      </td>
    </tr>
   <tr>
@@ -72,7 +72,7 @@
       Entity:
     </td>
     <td>
-       {{@model.entity}}
+       {{@model.entity.name}}
      </td>
    </tr>
   <tr>
@@ -80,7 +80,7 @@
       Form:
     </td>
     <td>
-      {{@model.form}}
+      {{@model.form.name}}
     </td>
   </tr>
   <tr>
@@ -93,33 +93,33 @@
   </tr>
 </table>
 
-{{#if @model.files.length}}
-<table class="files-table">
-  <thead>
-    <th>
-      File Name
-    </th>
-    <th>
-      Upload date
-    </th>
-    <th>
-      Size
-    </th>
-  {{#each @model.files as |file|}}
-    <tr>
-      <td>
-        {{file.name}}
-      </td>
-      <td>
-        {{file.uploadDate}}
-      </td>
-      <td>
-        {{file.size}}
-      </td>
-    </tr>
-  {{/each}}
-</thead>
-</table>
+{{#if @model.files}}
+  <table class="files-table">
+    <thead>
+      <th>
+        location
+      </th>
+      <th>
+        fileType
+      </th>
+      <th>
+        Size
+      </th>
+    {{#each @model.files as |file|}}
+      <tr>
+        <td>
+          {{file.location}}
+        </td>
+        <td>
+          {{file.fileType}}
+        </td>
+        <td>
+          {{file.size}}
+        </td>
+      </tr>
+    {{/each}}
+  </thead>
+  </table>
 {{else}}
   <h2>No files were found for this job</h2>
 {{/if}}

@@ -9,5 +9,6 @@ export default class FormModel extends Model {
 
   @hasMany('entity', { inverse: 'listings' }) suppliers;
   @hasMany('section', { inverse: 'form' }) sections;
+  @hasMany('job', { inverse: 'form' }) jobs;
 
 }

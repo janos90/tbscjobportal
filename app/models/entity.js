@@ -13,4 +13,5 @@ import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
     @hasMany('permission', { inverse: 'entity' }) permissions;
     @hasMany('form', { inverse: 'suppliers' }) listings;
 
+    @hasMany('job', { inverse: 'entity' }) jobs;
   }

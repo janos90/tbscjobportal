@@ -45,7 +45,7 @@ export default class FormRoute extends Route {
     }
 
     function failure(reason) {
-      // handle the error
+      alert("Job didnt save write " + reason)
     }
     newJob
     .save()

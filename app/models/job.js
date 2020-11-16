@@ -13,8 +13,9 @@ export default class JobModel extends Model {
   @attr description;
   @attr category;
 
-  @belongsTo('entity', { inverse: null }) entity;
-  @belongsTo('form', { inverse: null }) form;
+  @belongsTo('user', { inverse: 'jobs' }) createdBy;
+  @belongsTo('entity', { inverse: 'jobs' }) entity;
+  @belongsTo('form', { inverse: 'jobs' }) form;
   @hasMany('file', { inverse: 'job' }) files;
 
 }
