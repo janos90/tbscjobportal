@@ -5,7 +5,7 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
   headers = {
     'Access-Control-Allow-Origin': '*'
   }
-  // namespace = 'api';
+  // namespace = 'api'; 
 
   buildURL(...args) {
     return `${super.buildURL(...args)}`;
