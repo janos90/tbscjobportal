@@ -8,5 +8,6 @@ export default class FormModel extends Model {
   @belongsTo('entity', { inverse: 'forms' }) entity;
 
   @hasMany('entity', { inverse: 'listings' }) suppliers;
+  @hasMany('section', { inverse: 'form' }) sections;
 
 }

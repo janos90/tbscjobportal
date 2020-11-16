@@ -16,15 +16,15 @@
       <label >Description <Input class='form-description' @type='text' @value={{description}} /> </label> <br />
       <label >Category <Input class='form-category' @type='text' @value={{category}} /> </label> <br />
     </div>
-
-
+    name: {{@model.name}}
+    sections: {{@model.sections}}
+    sections: {{@model.sections.length}}
   {{#each @model.sections as |section|}}
-  here!!
     {{#if section.title}}
       <h1>{{section.title}}</h1>
     {{/if}}
     <div class='form-pair'>
-      {{#each section.sections as |subSection|}}
+      {{#each section.subsections as |subSection|}}
       <div class={{if (gt section.sections.length 1) "checkboxContainer" "fullWidthContainer"}}>
         {{#if subSection.title}}
         <header class="checkboxContainerheader">
@@ -83,7 +83,6 @@
         {{/each}}
       </table>
       </div>
-
       {{/each}}
     </div>
   {{/each}}

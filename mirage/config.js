@@ -35,4 +35,25 @@ export default function() {
   this.get('/forms/:id', (schema, request) => {
     return schema.forms.find(request.params.id);
   });
+  this.get('/section', (schema, request) => {
+    return schema.section.all();
+  });
+  this.get('/section/:id', (schema, request) => {
+    return schema.section.find(request.params.id);
+  });
+
+  this.get('/subsection', (schema, request) => {
+    return schema.subsection.all();
+  });
+  this.get('/subsection/:id', (schema, request) => {
+    return schema.subsection.find(request.params.id);
+  });
+
+  this.get('/element', (schema, request) => {
+    return schema.element.all();
+  });
+  this.get('/element/:id', (schema, request) => {
+    return schema.element.find(request.params.id);
+  });
+
 }
