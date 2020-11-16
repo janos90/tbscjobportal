@@ -16,8 +16,8 @@
   {{#each @model as |entity|}}
     <LinkTo @route="authenticated.entity" class="job-link" id="entity-{{entity.id}}" @model={{entity}}>
       <div class="tile entity">
-        <div class="entity-tile-image">
-          <img src="{{entity.image}}" />
+        <div >
+          <img class="entity-tile-image" src="{{entity.image}}" />
         </div>
         <div class="entity-tile-name">
           <h2>{{entity.name}}</h2>

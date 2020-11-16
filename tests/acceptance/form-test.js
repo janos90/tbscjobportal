@@ -12,13 +12,6 @@ module('Acceptance | form', function(hooks) {
     let newEntity = this.server.create("entity", {name: 'userName 1'});
     let newPermission = this.server.create("permission", {user: newUser, entity: newEntity});
 
-    // server.createList("form", 5).forEach((form) => {
-    //   server.createList("section", 10, { form }).forEach((section) => {
-    //     server.createList("subsection", 5, { section }).forEach((subsection) => {
-    //       server.createList("element", 5, { subsection })
-    //     })
-    //   })
-    // })
 
     let newform = server.create("form", {
       sections: server.createList("section", 10)
@@ -50,7 +43,7 @@ module('Acceptance | form', function(hooks) {
     await fillIn('input.form-bedrooms', 'form-bedrooms 1');
     await fillIn('input.form-description', 'form-description 1');
     await fillIn('input.form-category', 'form-category 1');
-    await pauseTest();
+    // await pauseTest();
 
     await click('.form-save');
 
