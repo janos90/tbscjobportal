@@ -7,6 +7,12 @@ export default class EntitiesRoute extends Route {
   @service store;
   @service session;
 
+  async isAdmin() {
+    console.log("running");
+    console.log("role: ", this.session.data.user.role, "!");
+      return this.session.data.user.role === 'admin'
+  }
+
   beforeModel(transition) {
     if(!this.session.data.user) {
       this.transitionTo('login')
@@ -19,6 +25,7 @@ export default class EntitiesRoute extends Route {
 
   @action
   logout() {
+    this.session.data.user = {};
     this.transitionTo('login');
   }
 

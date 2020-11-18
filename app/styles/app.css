@@ -99,7 +99,7 @@ button {
 }
 
 .job-status.closed {
-  color: black;
+  color: #f00;
 }
 
 .job-header {

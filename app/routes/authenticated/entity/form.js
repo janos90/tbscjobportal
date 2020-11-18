@@ -18,12 +18,26 @@ export default class FormRoute extends Route {
 
   async model(params) {
     return this.get('store').find('form', params.form_id, {
-      include: 'sections,sections.subsections,sections.subsections.elements'});
-    }
+      include: 'sections,sections.subsections,sections.subsections.elements'
+    });
+  }
 
   @action
   saveJob() {
     var self = this;
+    let filesNames = [];
+    let files = [];
+    if(this.get('controller').get('fileUno')) {
+      filesNames.push(this.get('controller').get('fileUno'))
+    }
+    if(this.get('controller').get('fileDos')) {
+      filesNames.push(this.get('controller').get('fileDos'))
+    }
+    if(this.get('controller').get('fileTres')) {
+      filesNames.push(this.get('controller').get('fileTres'))
+    }
+
+
     var newJob = this.store.createRecord('job', {
       status: 'open',
       title: this.get('controller').get('title'),
@@ -35,12 +49,23 @@ export default class FormRoute extends Route {
       createdBy: self.get('session.data.user.id'),
       entity: this.get('controller').get(''),
       form: this.get('model'),
-      files: [],
       description: this.get('controller').get('description'),
       category: this.get('controller').get('category')
     });
 
     function transitionTonewJob(job) {
+
+      filesNames.forEach(name => {
+        var newFile = self.store.createRecord('file', {
+          location: name,
+          fileType: 'pdf',
+          job: job
+        })
+        newFile.save().then(file => {
+          files.push(file)
+        })
+      })
+
       self.transitionTo('authenticated.entity.job', job);
     }
 
@@ -51,5 +76,11 @@ export default class FormRoute extends Route {
     .save()
     .then(transitionTonewJob)
     .catch(failure);
+  }
+
+  @action
+  addFiles(file) {
+    console.log(file);
+
   }
 }

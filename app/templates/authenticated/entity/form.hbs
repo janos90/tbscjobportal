@@ -16,78 +16,77 @@
       <label >Description <Input class='form-description' @type='text' @value={{description}} /> </label> <br />
       <label >Category <Input class='form-category' @type='text' @value={{category}} /> </label> <br />
     </div>
-    name: {{@model.name}}
-    sections: {{@model.sections}}
-    sections: {{@model.sections.length}}
   {{#each @model.sections as |section|}}
     {{#if section.title}}
       <h1>{{section.title}}</h1>
     {{/if}}
     <div class='form-pair'>
       {{#each section.subsections as |subSection|}}
-      <div class={{if (gt section.sections.length 1) "checkboxContainer" "fullWidthContainer"}}>
-        {{#if subSection.title}}
-        <header class="checkboxContainerheader">
-          <h3>{{subSection.title}}</h3>
-        </header>
-        {{/if}}
-        <table>
-        {{#each subSection.elements as |element|}}
-          {{#if element.image}}
-            <img src="{{element.image}}" style="background-color: {{element.background}}; padding: 15px;"/>
+        <div class={{if (gt section.sections.length 1) "checkboxContainer" "fullWidthContainer"}}>
+          {{#if subSection.title}}
+            <header class="checkboxContainerheader">
+              <h3>{{subSection.title}}</h3>
+            </header>
           {{/if}}
-          {{#if (eq element.input "text")}}
-            <tr>
-              <td>
-                <label for="{{element.name}}">{{element.text}}: </label>
-              </td>
-              <td>
-                <Input
-                  @type="text"
-                  @name={{element.name}}
-                  @id={{element.name}}
-                />
-              </td>
-            </tr>
-          {{/if}}
-          {{#if (eq element.input "textArea")}}
-            <tr>
-              <td>
-                <label for="{{element.name}}">{{element.text}}: </label>
-              </td>
-              <td>
-                <textarea type="text" name="{{element.name}}" id="{{element.name}}" class="textbox form-address" ></textarea>
-              </td>
-            </tr>
-          {{/if}}
-          {{#if (eq element.input "checkbox")}}
-            <tr>
-              <td>
-                <Input type="checkbox" name="{{element.name}}" id="{{element.name}}" />
-              </td>
-              <td>
-                <label for="{{element.name}}">{{element.text}}: </label>
-              </td>
-            </tr>
-          {{/if}}
-          {{#if (eq element.input "radio")}}
-            <tr>
-              <td>
-                <Input type="radio" name="{{element.radio}}" id="{{element.name}}" />
-              </td>
-              <td>
-                <label for="{{element.name}}">{{element.text}}: </label>
-              </td>
-            </tr>
-          {{/if}}
-        {{/each}}
-      </table>
-      </div>
+          <table>
+            {{#each subSection.elements as |element|}}
+              {{#if element.image}}
+                <img src="{{element.image}}" style="background-color: {{element.background}}; padding: 15px;"/>
+              {{/if}}
+              {{#if (eq element.input "text")}}
+                <tr>
+                  <td>
+                    <label for="{{element.name}}">{{element.text}}: </label>
+                  </td>
+                  <td>
+                    <Input
+                      @type="text"
+                      @name={{element.name}}
+                      @id={{element.name}}
+                    />
+                  </td>
+                </tr>
+              {{/if}}
+              {{#if (eq element.input "textArea")}}
+                <tr>
+                  <td>
+                    <label for="{{element.name}}">{{element.text}}: </label>
+                  </td>
+                  <td>
+                    <textarea type="text" name="{{element.name}}" id="{{element.name}}" class="textbox form-address" ></textarea>
+                  </td>
+                </tr>
+              {{/if}}
+              {{#if (eq element.input "checkbox")}}
+                <tr>
+                  <td>
+                    <Input type="checkbox" name="{{element.name}}" id="{{element.name}}" />
+                  </td>
+                  <td>
+                    <label for="{{element.name}}">{{element.text}}: </label>
+                  </td>
+                </tr>
+              {{/if}}
+              {{#if (eq element.input "radio")}}
+                <tr>
+                  <td>
+                    <Input type="radio" name="{{element.radio}}" id="{{element.name}}" />
+                  </td>
+                  <td>
+                    <label for="{{element.name}}">{{element.text}}: </label>
+                  </td>
+                </tr>
+              {{/if}}
+            {{/each}}
+          </table>
+        </div>
       {{/each}}
     </div>
   {{/each}}
   <div class="upload-section">
-    <input type="file" name="name" multiple><br><br>
+    <label>File 2: <Input type="file" name="name" id="file2" @value={{fileUno}} /><br><br></label>
+    <label>File 2: <Input type="file" name="name" id="file2" @value={{fileDos}} /><br><br></label>
+    <label>File 2: <Input type="file" name="name" id="file2" @value={{fileTres}} /><br><br></label>
   </div>
 
 </div>

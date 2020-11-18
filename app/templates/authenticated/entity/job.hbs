@@ -92,7 +92,11 @@
     </td>
   </tr>
 </table>
-
+{{#if (eq @model.status 'open')}}
+<button {{on "click" this.closeJob}}>Close job</button>
+{{else}}
+<button {{on "click" this.openJob}}>open job</button>
+{{/if}}
 {{#if @model.files}}
   <table class="files-table">
     <thead>
