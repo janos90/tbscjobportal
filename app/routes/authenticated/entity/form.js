@@ -45,9 +45,9 @@ export default class FormRoute extends Route {
       suburb: this.get('controller').get('suburb'),
       city: this.get('controller').get('city'),
       address: this.get('controller').get('address'),
-      bedrooms: parseInt(this.get('controller').get('bedrooms'), 10),
-      createdBy: self.get('session.data.user.id'),
-      entity: this.get('controller').get(''),
+      bedrooms: this.get('controller').get('bedrooms'),
+      createdBy: self.get('session.data.user'),
+      entity: this.modelFor('authenticated.entity'),
       form: this.get('model'),
       description: this.get('controller').get('description'),
       category: this.get('controller').get('category')
